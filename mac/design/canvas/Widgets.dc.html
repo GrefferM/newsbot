@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Віджети</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#0A84FF}a:hover{color:#409CFF}
+</style>
+</helmet>
+<div style="width: 980px; height: 480px; box-sizing: border-box; padding: 40px; border-radius: 12px; background: #3A3F4B; display: flex; gap: 24px; align-items: flex-start; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif; color: rgba(255,255,255,0.9)">
+
+  <div style="display: flex; flex-direction: column; gap: 24px">
+    <div style="width: 170px; height: 170px; box-sizing: border-box; padding: 14px; border-radius: 22px; background: rgba(30,30,32,0.86); display: flex; flex-direction: column; gap: 6px">
+      <span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.6)">NEWSBOT · СТЕЖЕННЯ</span>
+      <span style="font-size: 34px; font-weight: 700; line-height: 1">2</span>
+      <span style="font-size: 12px; color: rgba(255,255,255,0.65)">плани чекають</span>
+      <div style="flex-grow: 1"></div>
+      <span style="font-size: 11px; color: rgba(255,255,255,0.6)">Найближча дата</span>
+      <span style="font-size: 13px; font-weight: 600">ZEC · 16-11-2026</span>
+    </div>
+    <span style="font-size: 12px; color: rgba(255,255,255,0.7)">Малий</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 24px">
+    <div style="width: 364px; height: 170px; box-sizing: border-box; padding: 14px 16px; border-radius: 22px; background: rgba(30,30,32,0.86); display: flex; flex-direction: column; gap: 8px">
+      <div style="display: flex; align-items: center; gap: 6px">
+        <span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.6)">NEWSBOT</span>
+        <div style="flex-grow: 1"></div>
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: #30D158"></span>
+        <span style="font-size: 11px; color: rgba(255,255,255,0.65)">Сервер онлайн</span>
+      </div>
+      <span style="font-size: 11px; font-weight: 700; color: #64B5FF">ПЛАН · СТЕЖУ</span>
+      <span style="font-size: 15px; font-weight: 600; line-height: 1.3">ZEC: шорт до 995.00</span>
+      <span style="font-size: 12px; color: rgba(255,255,255,0.65)">Годинне закриття нижче 993 з обсягом — 6% рахунку, стоп 1045, тейк 900</span>
+      <div style="flex-grow: 1"></div>
+      <div style="display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,0.6)">
+        <span>Позицій немає · рахунок $100</span><span>оновлено 21:05</span>
+      </div>
+    </div>
+    <span style="font-size: 12px; color: rgba(255,255,255,0.7)">Середній</span>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 24px">
+    <div style="width: 364px; height: 382px; box-sizing: border-box; padding: 14px 16px; border-radius: 22px; background: rgba(30,30,32,0.86); display: flex; flex-direction: column; gap: 10px">
+      <div style="display: flex; align-items: center; gap: 6px">
+        <span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.6)">NEWSBOT · ВІШЛІСТ</span>
+        <div style="flex-grow: 1"></div>
+        <span style="font-size: 11px; color: rgba(255,255,255,0.65)">1 монета</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 13px">
+        <span style="width: 64px; font-weight: 600">ZEC</span>
+        <span style="width: 72px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; color: rgba(255,255,255,0.7)">1063.01</span>
+        <span style="flex-grow: 1; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; color: #FF6961; text-align: right">−9.1%</span>
+      </div>
+      <div style="height: 1px; background: rgba(255,255,255,0.1); margin: 2px 0"></div>
+      <span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.6)">ОСТАННІ ПОДІЇ</span>
+      <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12px">
+        <sc-for list="{{ events }}" as="e" hint-placeholder-count="4">
+          <div style="display: flex; gap: 8px"><span style="flex-shrink: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: rgba(255,255,255,0.6)">{{ e.time }}</span><span style="line-height: 1.35">{{ e.text }}</span></div>
+        </sc-for>
+      </div>
+      <div style="flex-grow: 1"></div>
+      <span style="font-size: 11px; color: rgba(255,255,255,0.6)">Календар: ZEC · голосування койнхолдерів 16-11-2026</span>
+    </div>
+    <span style="font-size: 12px; color: rgba(255,255,255,0.7)">Великий</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":980,"height":480}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      events: [
+        { time: '20:50', text: 'План · стежу: ZEC, годинне закриття нижче 993' },
+        { time: '20:49', text: 'План · стежу: ZEC, після голосування 16 листопада' },
+        { time: '20:30', text: 'Закрито шорт ZEC: −0.18%' },
+        { time: '20:29', text: 'Шорт ZEC 6% після «план на стеженні»' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

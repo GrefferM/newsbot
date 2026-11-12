@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: gofmt
+        run: test -z "$(gofmt -l .)"
+
+      - run: go vet ./...
+
+      - run: go test -race ./...
+
+      - name: dead code
+        run: test -z "$(go run golang.org/x/tools/cmd/deadcode@v0.31.0 ./...)"
+
+      - name: no comments
+        run: test -z "$(grep -rn --include='*.go' '//' . | grep -v '://' | grep -v '//go:')"
+
+  app:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - name: swift format
+        run: test -z "$(swift format lint -r mac/Newsbot mac/Core/Sources mac/Core/Tests 2>&1)"
+
+      - name: core tests
+        run: mac/scripts/test.sh

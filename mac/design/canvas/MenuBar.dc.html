@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Рядок меню</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#0A84FF}a:hover{color:#409CFF}
+</style>
+</helmet>
+<div style="width: 460px; height: 520px; box-sizing: border-box; border-radius: 12px; overflow: hidden; background: #3A3F4B; display: flex; flex-direction: column; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif; color: rgba(255,255,255,0.88)">
+
+  <div style="height: 28px; flex-shrink: 0; background: rgba(30,30,32,0.75); display: flex; align-items: center; justify-content: flex-end; gap: 16px; padding: 0 14px; font-size: 13px; color: rgba(255,255,255,0.9)">
+    <div style="width: 22px; height: 18px; display: flex; align-items: center; justify-content: center; border-radius: 4px; background: rgba(255,255,255,0.18)">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l5 6 4-4 4 7 5-9"></path></svg>
+    </div>
+    <span>Вт 10 лист.  21:05</span>
+  </div>
+
+  <div style="margin: 6px 12px 0 auto; width: 340px; box-sizing: border-box; padding: 12px; border-radius: 12px; background: #242426; border: 1px solid rgba(255,255,255,0.12); display: flex; flex-direction: column; gap: 10px">
+    <div style="display: flex; align-items: center; gap: 8px; padding: 0 4px">
+      <span style="font-size: 14px; font-weight: 600">Newsbot</span>
+      <div style="flex-grow: 1"></div>
+      <span style="width: 8px; height: 8px; border-radius: 50%; background: #30D158"></span>
+      <span style="font-size: 12px; color: rgba(255,255,255,0.6)">Сервер онлайн · джерела 6 з 6</span>
+    </div>
+
+    <div style="display: flex; flex-direction: column">
+      <span style="font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.6); padding: 0 4px 6px">ОСТАННІ ПОДІЇ</span>
+      <sc-for list="{{ events }}" as="e" hint-placeholder-count="3">
+        <div style="display: flex; align-items: baseline; gap: 8px; padding: 6px 4px">
+          <span style="width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background: {{ e.dot }}; align-self: center"></span>
+          <span style="width: 80px; flex-shrink: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; color: rgba(255,255,255,0.6)">{{ e.time }}</span>
+          <span style="font-size: 13px; line-height: 1.35">{{ e.text }}</span>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="height: 1px; background: rgba(255,255,255,0.08)"></div>
+
+    <div style="display: flex; flex-direction: column">
+      <div style="display: flex; justify-content: space-between; padding: 6px 4px; font-size: 13px"><span>Відкриті позиції</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace">0</span></div>
+      <div style="display: flex; justify-content: space-between; padding: 6px 4px; font-size: 13px"><span>Рахунок · Testnet</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: #FF6961">$99.82 · −0.18%</span></div>
+      <div style="display: flex; justify-content: space-between; padding: 6px 4px; font-size: 13px"><span>Вішліст</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace">1</span></div>
+    </div>
+
+    <div style="height: 1px; background: rgba(255,255,255,0.08)"></div>
+
+    <button style="height: 30px; border: 0; border-radius: 7px; background: rgba(255,255,255,0.12); color: #fff; font: inherit; font-size: 13px; font-weight: 500">Відкрити Newsbot</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":460,"height":520}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      events: [
+        { time: '20:50:12', dot: '#0A84FF', text: 'ZEC: Годинне закриття нижче 993 з обсягом вище середнього — пробій жовтневої підтримки підтверджено' },
+        { time: '20:49:21', dot: '#0A84FF', text: 'ZEC: Після 16 листопада: голосування койнхолдерів дало консенсус за NU7.1…' },
+        { time: '20:30:14', dot: '#0A84FF', text: 'Закрито шорт ZEC: −0.18%' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

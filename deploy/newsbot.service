@@ -1,0 +1,17 @@
+[Unit]
+Description=newsbot — Binance announcements and crypto incidents to Telegram
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=newsbot
+WorkingDirectory=/opt/newsbot
+ExecStart=/opt/newsbot/newsbot
+Restart=always
+RestartSec=10
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/newsbot/data
+
+[Install]
+WantedBy=multi-user.target
