@@ -1,0 +1,15 @@
+# What a build makes
+/newsbot
+
+# What stays on this machine and travels nowhere: keys, the seen-state and the journal
+.env
+data/
+
+# Editors, and the systems they run on
+.idea/
+.vscode/
+.DS_Store
+/mac/.build/
+/mac/Core/.build/
+xcuserdata/
+*.xcuserstate

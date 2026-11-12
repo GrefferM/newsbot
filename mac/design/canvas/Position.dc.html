@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Позиція</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#0A84FF}a:hover{color:#409CFF}
+</style>
+</helmet>
+<div style="width: 520px; height: 480px; box-sizing: border-box; background: #232325; border-radius: 14px; border: 1px solid rgba(255,255,255,0.14); overflow: hidden; display: flex; flex-direction: column; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif; color: rgba(255,255,255,0.88)">
+
+  <div style="position: relative; padding: 34px 24px 16px; display: flex; flex-direction: column; gap: 6px; background: rgba(10,132,255,0.10)">
+    <div style="position: absolute; left: 14px; top: 12px; display: flex; gap: 8px" aria-hidden="true">
+      <span style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F57"></span>
+      <span style="width: 12px; height: 12px; border-radius: 50%; background: #FEBC2E"></span>
+      <span style="width: 12px; height: 12px; border-radius: 50%; background: #28C840"></span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 8px">
+      <span style="font-size: 11px; font-weight: 700; color: #64B5FF">ПОЗИЦІЯ ВІДКРИТА</span>
+      <span style="font-size: 11px; padding: 2px 7px; border-radius: 10px; background: rgba(255,214,10,0.18); color: #FFD60A">TESTNET</span>
+      <div style="flex-grow: 1"></div>
+      <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; color: rgba(255,255,255,0.6)">14:00:31</span>
+    </div>
+    <h1 style="margin: 0; font-size: 20px; font-weight: 700">Шорт ZECUSDT · план на стеженні</h1>
+  </div>
+
+  <div style="padding: 18px 24px 0; display: flex; align-items: baseline; gap: 12px">
+    <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 34px; font-weight: 700; color: #5EDB7F">+2.9%</span>
+    <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 15px; color: rgba(255,255,255,0.6)">$0.17 на $6</span>
+  </div>
+
+  <div style="padding: 12px 24px 0; display: flex; flex-direction: column; gap: 4px">
+    <div style="position: relative; height: 20px">
+      <div style="position: absolute; left: 0; right: 0; top: 7px; height: 6px; border-radius: 3px; background: linear-gradient(90deg, rgba(48,209,88,0.5) 0%, rgba(255,255,255,0.12) 50%, rgba(255,69,58,0.5) 100%)"></div>
+      <div style="position: absolute; left: 62%; top: 1px; width: 2px; height: 18px; margin-left: -1px; background: rgba(255,255,255,0.7)"></div>
+      <div style="position: absolute; left: 43%; top: 3px; width: 14px; height: 14px; margin-left: -7px; box-sizing: border-box; border-radius: 50%; background: #fff; border: 3px solid #1E1E1E"></div>
+    </div>
+    <div style="display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,0.6); font-family: ui-monospace, 'SF Mono', Menlo, monospace">
+      <span>TP 900.00</span><span>вхід 990.00</span><span>SL 1045.00</span>
+    </div>
+  </div>
+
+  <div style="margin: 16px 24px 0; padding: 14px 16px; border-radius: 12px; background: #2C2C2E; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 10px 16px; font-size: 13px">
+    <span style="color: rgba(255,255,255,0.6)">Поточна ціна</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace">962.00</span>
+    <span style="color: rgba(255,255,255,0.6)">Розмір</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace">6% · $6</span>
+    <span style="color: rgba(255,255,255,0.6)">Стоп і тейк</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace">стоять на біржі</span>
+    <span style="color: rgba(255,255,255,0.6)">Закриття</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace">12 лист., 14:00</span>
+  </div>
+
+  <div style="flex-grow: 1"></div>
+
+  <div style="padding: 16px 24px 20px; display: flex; justify-content: flex-end">
+    <button style="height: 40px; padding: 0 16px; border: 0; border-radius: 10px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.88); font: inherit; font-size: 14px; font-weight: 600">Закрити позицію</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":520,"height":480}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

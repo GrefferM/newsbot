@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Картка монети</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#0A84FF;text-decoration:none}a:hover{color:#409CFF}
+</style>
+</helmet>
+<div style="width: 1280px; height: 2670px; box-sizing: border-box; background: #1E1E1E; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); overflow: hidden; display: flex; flex-direction: column; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif; color: rgba(255,255,255,0.88)">
+
+  <div style="padding: 2px 28px 14px; display: flex; flex-direction: column; gap: 4px; background: #2A2A2C">
+    <div style="height: 28px; display: flex; align-items: center; gap: 12px">
+      <div style="display: flex; gap: 8px; margin-left: -12px" aria-hidden="true"><span style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F57"></span><span style="width: 12px; height: 12px; border-radius: 50%; background: #FEBC2E"></span><span style="width: 12px; height: 12px; border-radius: 50%; background: #28C840"></span></div>
+      <span style="margin-left: 16px; font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 10px; background: rgba(255,159,10,0.16); color: #FFB340">ожила 10 хв тому: інтерес −3.4%, лонги +2.6 п.п.</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 16px">
+      <h1 style="margin: 0; font-size: 28px; font-weight: 700">ZEC</h1>
+      <span style="display: flex; align-items: center; gap: 5px; font-size: 12px; color: rgba(255,255,255,0.6)"><span style="width: 7px; height: 7px; border-radius: 50%; background: #30D158"></span>наживо</span>
+      <div style="flex-grow: 1"></div>
+      <button style="border: 0; border-radius: 7px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.88); font: inherit; font-size: 12px; font-weight: 600; padding: 6px 12px">Прибрати з вішліста</button>
+      <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 13px; color: #FF6961">−9.1% за добу</span>
+      <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 26px; font-weight: 700">1063.01</span>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1; display: flex; min-height: 0">
+    <div style="flex-grow: 1; min-width: 0; padding: 16px 24px; display: flex; flex-direction: column; gap: 12px">
+
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+        <sc-for list="{{ tiles }}" as="s" hint-placeholder-count="4">
+          <div style="padding: 12px 14px; border-radius: 10px; background: #2C2C2E; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 11px; color: rgba(255,255,255,0.6)">{{ s.label }}</span>
+            <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 18px; font-weight: 600; color: {{ s.color }}">{{ s.value }}</span>
+            <span style="font-size: 11px; color: rgba(255,255,255,0.55)">{{ s.note }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px">
+        <sc-for list="{{ moves }}" as="s" hint-placeholder-count="6">
+          <div style="padding: 12px 14px; border-radius: 10px; background: #2C2C2E; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 11px; color: rgba(255,255,255,0.6)">{{ s.label }}</span>
+            <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 18px; font-weight: 600; color: {{ s.color }}">{{ s.value }}</span>
+            <span style="font-size: 11px; color: rgba(255,255,255,0.55)">{{ s.note }}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="padding: 12px 16px; border-radius: 10px; background: #2C2C2E; display: flex; flex-direction: column; gap: 8px">
+        <div style="display: flex; align-items: center; gap: 12px; font-size: 12px">
+          <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; color: #5EDB7F; white-space: nowrap">10.11 17:00 · В 1049.20 · Макс 1071.40 · Мін 1044.80 · З 1063.01 · +1.32% · $18.4M</span>
+          <div style="flex-grow: 1"></div>
+          <div style="display: flex; background: rgba(255,255,255,0.08); border-radius: 7px; padding: 2px"><button style="border: 0; background: transparent; color: rgba(255,255,255,0.6); font: inherit; font-size: 11px; padding: 3px 9px; border-radius: 5px">1 хв</button><button style="border: 0; background: transparent; color: rgba(255,255,255,0.6); font: inherit; font-size: 11px; padding: 3px 9px; border-radius: 5px">5 хв</button><button style="border: 0; background: #636366; color: #fff; font: inherit; font-size: 11px; padding: 3px 9px; border-radius: 5px">1 год</button><button style="border: 0; background: transparent; color: rgba(255,255,255,0.6); font: inherit; font-size: 11px; padding: 3px 9px; border-radius: 5px">1 день</button></div>
+        </div>
+        <div style="display: flex; gap: 8px">
+          <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+            <div style="position: relative; height: 240px; margin-top: 14px; border-bottom: 1px solid rgba(255,255,255,0.08)">
+              <sc-for list="{{ prices }}" as="p" hint-placeholder-count="4"><div style="position: absolute; left: 0; right: 0; top: {{ p.top }}; height: 1px; background: rgba(255,255,255,0.06)"></div></sc-for>
+              <sc-for list="{{ ticks }}" as="t" hint-placeholder-count="9"><div style="position: absolute; top: 0; bottom: 0; left: {{ t.left }}; width: 0; border-left: 1px {{ t.line }} {{ t.rule }}"></div></sc-for>
+              <sc-for list="{{ candles }}" as="k" hint-placeholder-count="120">
+                <div style="position: absolute; left: {{ k.left }}; top: {{ k.wt }}; height: {{ k.wh }}; width: 1px; margin-left: -0.5px; background: {{ k.c }}"></div>
+                <div style="position: absolute; left: {{ k.left }}; top: {{ k.bt }}; height: {{ k.bh }}; width: 4px; margin-left: -2px; background: {{ k.c }}"></div>
+              </sc-for>
+              <div style="position: absolute; top: 0; bottom: 0; left: 30.08%; width: 0; border-left: 1px solid rgba(255,214,10,0.3)"></div>
+              <span style="position: absolute; top: -7px; left: 30.08%; width: 5px; height: 5px; margin-left: -2.5px; border-radius: 50%; background: #FFD60A"></span>
+              <div style="position: absolute; top: 0; bottom: 0; left: 99.2%; width: 0; border-left: 1px dashed rgba(255,214,10,0.9)"></div>
+              <span style="position: absolute; top: -16px; left: 99.2%; transform: translateX(-100%); font-size: 10px; font-weight: 600; padding: 1px 5px; border-radius: 3px; white-space: nowrap; background: #FFD60A; color: rgba(0,0,0,0.85)">за 8 хв  ·  Голосування за NU7.1</span>
+              <div style="position: absolute; left: 0; right: 0; top: 72.40%; height: 0; border-top: 1px dashed rgba(48,209,88,0.7)"></div>
+              <div style="position: absolute; top: 0; bottom: 0; left: 70.73%; width: 1px; background: rgba(255,255,255,0.25)"></div>
+              <div style="position: absolute; left: 0; right: 0; top: 38%; height: 1px; background: rgba(255,255,255,0.25)"></div>
+            </div>
+            <div style="position: relative; height: 15px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10px">
+              <sc-for list="{{ ticks }}" as="t" hint-placeholder-count="9"><span style="position: absolute; left: {{ t.left }}; transform: translateX(-50%); white-space: nowrap; color: {{ t.color }}; font-weight: {{ t.weight }}">{{ t.t }}</span></sc-for>
+              <span style="position: absolute; left: 70.73%; top: 0; transform: translateX(-50%); font-size: 10px; font-weight: 600; padding: 1px 4px; border-radius: 3px; white-space: nowrap; background: #E0E0E0; color: rgba(0,0,0,0.85)">09.11 20:00</span>
+            </div>
+            <div style="position: relative; height: 36px">
+              <sc-for list="{{ candles }}" as="k" hint-placeholder-count="120"><div style="position: absolute; left: {{ k.left }}; bottom: 0; height: {{ k.vh }}; width: 4px; margin-left: -2px; background: rgba(255,255,255,0.22)"></div></sc-for>
+            </div>
+          </div>
+          <div style="position: relative; width: 58px; height: 240px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10px; color: rgba(255,255,255,0.6)">
+            <sc-for list="{{ prices }}" as="p" hint-placeholder-count="4"><span style="position: absolute; left: 0; top: {{ p.top }}; transform: translateY(-50%)">{{ p.t }}</span></sc-for>
+            <span style="position: absolute; left: 0; top: 72.40%; transform: translateY(-50%); font-size: 10px; font-weight: 600; padding: 1px 4px; border-radius: 3px; white-space: nowrap; background: #30D158; color: rgba(0,0,0,0.85)">1063.01</span>
+            <span style="position: absolute; left: 0; top: 38%; transform: translateY(-50%); font-size: 10px; font-weight: 600; padding: 1px 4px; border-radius: 3px; white-space: nowrap; background: #E0E0E0; color: rgba(0,0,0,0.85)">1235.00</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; height: 340px">
+        <div style="padding: 12px 14px; border-radius: 10px; background: #2C2C2E; display: flex; flex-direction: column; gap: 8px">
+          <div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 12px; font-weight: 600">Ліквідність</span><span style="font-size: 11px; color: rgba(255,255,255,0.55)">стакан перпа</span><div style="flex-grow: 1"></div><span style="font-size: 11px; color: rgba(255,255,255,0.65)">Спред</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px">0.01%</span></div>
+          <div style="display: flex; gap: 6px">
+            <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+              <svg viewBox="0 0 300 110" width="100%" height="110" preserveAspectRatio="none" aria-hidden="true"><polygon points="150,110 150.0,108.2 146.2,105.5 142.5,103.1 138.8,102.2 135.0,101.3 131.2,100.3 127.5,98.3 123.8,97.1 120.0,94.4 116.2,91.9 112.5,88.2 108.8,84.8 105.0,81.2 101.2,79.5 97.5,78.2 93.8,75.5 90.0,73.0 86.2,72.1 82.5,69.2 78.8,67.5 75.0,65.4 71.2,62.2 67.5,60.7 63.8,58.3 60.0,55.3 56.2,51.6 52.5,49.5 48.8,48.3 45.0,47.4 41.2,38.2 37.5,34.7 33.8,31.8 30.0,29.3 26.2,26.0 22.5,23.8 18.8,22.8 15.0,20.1 11.2,16.8 7.5,14.9 3.8,14.0 0.0,12.8 0,110" fill="rgba(48,209,88,0.18)"></polygon><polyline points="150.0,108.2 146.2,105.5 142.5,103.1 138.8,102.2 135.0,101.3 131.2,100.3 127.5,98.3 123.8,97.1 120.0,94.4 116.2,91.9 112.5,88.2 108.8,84.8 105.0,81.2 101.2,79.5 97.5,78.2 93.8,75.5 90.0,73.0 86.2,72.1 82.5,69.2 78.8,67.5 75.0,65.4 71.2,62.2 67.5,60.7 63.8,58.3 60.0,55.3 56.2,51.6 52.5,49.5 48.8,48.3 45.0,47.4 41.2,38.2 37.5,34.7 33.8,31.8 30.0,29.3 26.2,26.0 22.5,23.8 18.8,22.8 15.0,20.1 11.2,16.8 7.5,14.9 3.8,14.0 0.0,12.8" fill="none" stroke="#30D158" stroke-width="1.4" vector-effect="non-scaling-stroke"></polyline><polygon points="150,110 150.0,108.8 153.8,107.8 157.5,105.9 161.2,103.6 165.0,101.5 168.8,100.5 172.5,97.2 176.2,95.8 180.0,84.8 183.8,82.8 187.5,81.9 191.2,80.3 195.0,79.1 198.8,75.9 202.5,73.4 206.2,71.5 210.0,70.5 213.8,69.1 217.5,67.1 221.2,64.5 225.0,62.8 228.8,59.9 232.5,57.4 236.2,54.0 240.0,52.3 243.8,51.2 247.5,48.2 251.2,45.9 255.0,43.1 258.8,40.6 262.5,38.9 266.2,36.3 270.0,34.1 273.8,23.2 277.5,20.4 281.2,17.5 285.0,13.7 288.8,12.1 292.5,9.3 296.2,7.1 300.0,6.0 300,110" fill="rgba(255,69,58,0.18)"></polygon><polyline points="150.0,108.8 153.8,107.8 157.5,105.9 161.2,103.6 165.0,101.5 168.8,100.5 172.5,97.2 176.2,95.8 180.0,84.8 183.8,82.8 187.5,81.9 191.2,80.3 195.0,79.1 198.8,75.9 202.5,73.4 206.2,71.5 210.0,70.5 213.8,69.1 217.5,67.1 221.2,64.5 225.0,62.8 228.8,59.9 232.5,57.4 236.2,54.0 240.0,52.3 243.8,51.2 247.5,48.2 251.2,45.9 255.0,43.1 258.8,40.6 262.5,38.9 266.2,36.3 270.0,34.1 273.8,23.2 277.5,20.4 281.2,17.5 285.0,13.7 288.8,12.1 292.5,9.3 296.2,7.1 300.0,6.0" fill="none" stroke="#FF453A" stroke-width="1.4" vector-effect="non-scaling-stroke"></polyline><line x1="150" y1="0" x2="150" y2="110" stroke="rgba(255,255,255,0.25)" stroke-width="1" vector-effect="non-scaling-stroke"></line></svg>
+              <div style="display: flex; justify-content: space-between; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10px; color: rgba(255,255,255,0.6)"><span>−2%</span><span>−1%</span><span>1063.01</span><span>+1%</span><span>+2%</span></div>
+            </div>
+            <div style="width: 40px; height: 110px; display: flex; flex-direction: column; justify-content: space-between; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10px; color: rgba(255,255,255,0.6)"><span>$9M</span><span>$6M</span><span>$3M</span><span>0</span></div>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 11px"><span style="width: 28px; color: rgba(255,255,255,0.6)">±1%</span><span style="width: 50px; text-align: right; font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: #5EDB7F">$4.72M</span><div style="flex-grow: 1; height: 8px; border-radius: 4px; overflow: hidden; display: flex; background: #FF453A"><div style="width: 52%; background: #30D158"></div></div><span style="width: 50px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: #FF6961">$4.36M</span></div>
+          <div style="display: flex; align-items: center; gap: 8px; font-size: 11px"><span style="width: 28px; color: rgba(255,255,255,0.6)">±2%</span><span style="width: 50px; text-align: right; font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: #5EDB7F">$8.91M</span><div style="flex-grow: 1; height: 8px; border-radius: 4px; overflow: hidden; display: flex; background: #FF453A"><div style="width: 54%; background: #30D158"></div></div><span style="width: 50px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: #FF6961">$7.64M</span></div>
+          <div style="display: flex; justify-content: space-between; font-size: 12px"><span style="color: rgba(255,255,255,0.65)">Найбільша заявка bid</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: #5EDB7F">$1.24M · −0.6%</span></div>
+          <div style="display: flex; justify-content: space-between; font-size: 12px"><span style="color: rgba(255,255,255,0.65)">Найбільша заявка ask</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: #FF6961">$0.98M · +0.4%</span></div>
+          <div style="display: flex; justify-content: space-between; font-size: 12px"><span style="color: rgba(255,255,255,0.65)">Прослизання на $200, продаж / купівля</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: #FFB340">0.01% / 0.01%</span></div>
+        </div>
+        <div style="padding: 12px 14px; border-radius: 10px; background: #2C2C2E; display: flex; flex-direction: column; gap: 8px">
+          <div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 12px; font-weight: 600">Деривативи</span><span style="font-size: 11px; color: rgba(255,255,255,0.55)">за вікном графіка · 1 год</span><div style="flex-grow: 1"></div><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; color: rgba(255,255,255,0.6)">01.11 16:00</span></div>
+          <div style="display: flex; flex-direction: column; gap: 2px">
+            <div style="display: flex; justify-content: space-between; font-size: 11px"><span style="color: rgba(255,255,255,0.65)">Відкритий інтерес</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: rgba(255,255,255,0.88)">$508.90M</span></div>
+            <div style="display: flex; gap: 6px">
+              <div style="position: relative; flex-grow: 1; min-width: 0; height: 62px; border-bottom: 1px solid rgba(255,255,255,0.08)">
+                <sc-for list="{{ days }}" as="d" hint-placeholder-count="5"><div style="position: absolute; top: 0; bottom: 0; left: {{ d.left }}; width: 0; border-left: 1px dashed rgba(255,255,255,0.08)"></div></sc-for>
+                <svg viewBox="0 0 300 62" width="100%" height="62" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; inset: 0"><polyline points="0.0,13.5 5.1,10.8 10.2,14.6 15.3,17.1 20.3,18.2 25.4,14.5 30.5,18.7 35.6,19.2 40.7,18.7 45.8,14.8 50.8,11.6 55.9,8.0 61.0,10.2 66.1,11.1 71.2,12.5 76.3,8.6 81.4,4.0 86.4,7.5 91.5,10.8 96.6,13.5 101.7,16.2 106.8,16.3 111.9,15.4 116.9,17.8 122.0,22.8 127.1,23.6 132.2,24.9 137.3,24.3 142.4,19.7 147.5,17.8 152.5,17.6 157.6,16.4 162.7,14.7 167.8,19.1 172.9,15.1 178.0,12.3 183.1,8.5 188.1,5.5 193.2,6.6 198.3,7.6 203.4,11.6 208.5,10.3 213.6,14.7 218.6,19.0 223.7,22.0 228.8,25.4 233.9,27.0 239.0,31.5 244.1,36.5 249.2,40.0 254.2,44.0 259.3,45.4 264.4,50.2 269.5,46.4 274.6,45.3 279.7,48.8 284.7,51.3 289.8,52.8 294.9,54.2 300.0,58.0" fill="none" stroke="#64B5FF" stroke-width="1.4" vector-effect="non-scaling-stroke"></polyline></svg>
+                <div style="position: absolute; top: 0; bottom: 0; left: 70%; width: 1px; background: rgba(255,255,255,0.25)"></div>
+              </div>
+              <div style="width: 40px; height: 62px; display: flex; flex-direction: column; justify-content: space-between; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10px; color: rgba(255,255,255,0.6)"><span>$560M</span><span>$510M</span><span>$460M</span></div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px">
+            <div style="display: flex; justify-content: space-between; font-size: 11px"><span style="color: rgba(255,255,255,0.65)">Фандинг / 8 год</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: #FFB340">+0.004%</span></div>
+            <div style="display: flex; gap: 6px">
+              <div style="position: relative; flex-grow: 1; min-width: 0; height: 62px; border-bottom: 1px solid rgba(255,255,255,0.08)">
+                <sc-for list="{{ days }}" as="d" hint-placeholder-count="5"><div style="position: absolute; top: 0; bottom: 0; left: {{ d.left }}; width: 0; border-left: 1px dashed rgba(255,255,255,0.08)"></div></sc-for>
+                <svg viewBox="0 0 300 62" width="100%" height="62" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; inset: 0"><rect x="0.0" y="7.9" width="2.2" height="23.1" fill="#FFB340"></rect><rect x="3.3" y="13.4" width="2.2" height="17.6" fill="#FFB340"></rect><rect x="6.7" y="14.8" width="2.2" height="16.2" fill="#FFB340"></rect><rect x="10.0" y="26.5" width="2.2" height="4.5" fill="#FFB340"></rect><rect x="13.3" y="31.0" width="2.2" height="8.5" fill="#FF453A"></rect><rect x="16.7" y="13.1" width="2.2" height="17.9" fill="#FFB340"></rect><rect x="20.0" y="31.0" width="2.2" height="1.8" fill="#FF453A"></rect><rect x="23.3" y="12.6" width="2.2" height="18.4" fill="#FFB340"></rect><rect x="26.7" y="5.2" width="2.2" height="25.8" fill="#FFB340"></rect><rect x="30.0" y="30.1" width="2.2" height="0.9" fill="#FFB340"></rect><rect x="33.3" y="29.9" width="2.2" height="1.1" fill="#FFB340"></rect><rect x="36.7" y="6.3" width="2.2" height="24.7" fill="#FFB340"></rect><rect x="40.0" y="15.9" width="2.2" height="15.1" fill="#FFB340"></rect><rect x="43.3" y="31.0" width="2.2" height="8.9" fill="#FF453A"></rect><rect x="46.7" y="31.0" width="2.2" height="10.7" fill="#FF453A"></rect><rect x="50.0" y="31.0" width="2.2" height="9.7" fill="#FF453A"></rect><rect x="53.3" y="8.1" width="2.2" height="22.9" fill="#FFB340"></rect><rect x="56.7" y="12.4" width="2.2" height="18.6" fill="#FFB340"></rect><rect x="60.0" y="31.0" width="2.2" height="9.9" fill="#FF453A"></rect><rect x="63.3" y="11.5" width="2.2" height="19.5" fill="#FFB340"></rect><rect x="66.7" y="4.9" width="2.2" height="26.1" fill="#FFB340"></rect><rect x="70.0" y="18.8" width="2.2" height="12.2" fill="#FFB340"></rect><rect x="73.3" y="31.0" width="2.2" height="1.1" fill="#FF453A"></rect><rect x="76.7" y="23.5" width="2.2" height="7.5" fill="#FFB340"></rect><rect x="80.0" y="31.0" width="2.2" height="10.5" fill="#FF453A"></rect><rect x="83.3" y="31.0" width="2.2" height="15.6" fill="#FF453A"></rect><rect x="86.7" y="5.3" width="2.2" height="25.7" fill="#FFB340"></rect><rect x="90.0" y="19.1" width="2.2" height="11.9" fill="#FFB340"></rect><rect x="93.3" y="24.5" width="2.2" height="6.5" fill="#FFB340"></rect><rect x="96.7" y="6.9" width="2.2" height="24.1" fill="#FFB340"></rect><rect x="100.0" y="28.5" width="2.2" height="2.5" fill="#FFB340"></rect><rect x="103.3" y="9.5" width="2.2" height="21.5" fill="#FFB340"></rect><rect x="106.7" y="11.5" width="2.2" height="19.5" fill="#FFB340"></rect><rect x="110.0" y="31.0" width="2.2" height="7.1" fill="#FF453A"></rect><rect x="113.3" y="31.0" width="2.2" height="5.3" fill="#FF453A"></rect><rect x="116.7" y="31.0" width="2.2" height="3.5" fill="#FF453A"></rect><rect x="120.0" y="31.0" width="2.2" height="5.8" fill="#FF453A"></rect><rect x="123.3" y="21.9" width="2.2" height="9.1" fill="#FFB340"></rect><rect x="126.7" y="31.0" width="2.2" height="5.0" fill="#FF453A"></rect><rect x="130.0" y="29.1" width="2.2" height="1.9" fill="#FFB340"></rect><rect x="133.3" y="31.0" width="2.2" height="10.5" fill="#FF453A"></rect><rect x="136.7" y="7.9" width="2.2" height="23.1" fill="#FFB340"></rect><rect x="140.0" y="31.0" width="2.2" height="0.9" fill="#FF453A"></rect><rect x="143.3" y="27.4" width="2.2" height="3.6" fill="#FFB340"></rect><rect x="146.7" y="22.0" width="2.2" height="9.0" fill="#FFB340"></rect><rect x="150.0" y="8.1" width="2.2" height="22.9" fill="#FFB340"></rect><rect x="153.3" y="29.0" width="2.2" height="2.0" fill="#FFB340"></rect><rect x="156.7" y="7.6" width="2.2" height="23.4" fill="#FFB340"></rect><rect x="160.0" y="25.5" width="2.2" height="5.5" fill="#FFB340"></rect><rect x="163.3" y="24.2" width="2.2" height="6.8" fill="#FFB340"></rect><rect x="166.7" y="24.6" width="2.2" height="6.4" fill="#FFB340"></rect><rect x="170.0" y="31.0" width="2.2" height="15.4" fill="#FF453A"></rect><rect x="173.3" y="28.2" width="2.2" height="2.8" fill="#FFB340"></rect><rect x="176.7" y="31.0" width="2.2" height="8.3" fill="#FF453A"></rect><rect x="180.0" y="31.0" width="2.2" height="16.0" fill="#FF453A"></rect><rect x="183.3" y="12.7" width="2.2" height="18.3" fill="#FFB340"></rect><rect x="186.7" y="31.0" width="2.2" height="8.8" fill="#FF453A"></rect><rect x="190.0" y="26.7" width="2.2" height="4.3" fill="#FFB340"></rect><rect x="193.3" y="15.9" width="2.2" height="15.1" fill="#FFB340"></rect><rect x="196.7" y="23.2" width="2.2" height="7.8" fill="#FFB340"></rect><rect x="200.0" y="31.0" width="2.2" height="2.1" fill="#FF453A"></rect><rect x="203.3" y="24.8" width="2.2" height="6.2" fill="#FFB340"></rect><rect x="206.7" y="23.2" width="2.2" height="7.8" fill="#FFB340"></rect><rect x="210.0" y="13.3" width="2.2" height="17.7" fill="#FFB340"></rect><rect x="213.3" y="31.0" width="2.2" height="11.6" fill="#FF453A"></rect><rect x="216.7" y="23.0" width="2.2" height="8.0" fill="#FFB340"></rect><rect x="220.0" y="31.0" width="2.2" height="5.5" fill="#FF453A"></rect><rect x="223.3" y="31.0" width="2.2" height="4.2" fill="#FF453A"></rect><rect x="226.7" y="13.8" width="2.2" height="17.2" fill="#FFB340"></rect><rect x="230.0" y="25.3" width="2.2" height="5.7" fill="#FFB340"></rect><rect x="233.3" y="22.9" width="2.2" height="8.1" fill="#FFB340"></rect><rect x="236.7" y="14.4" width="2.2" height="16.6" fill="#FFB340"></rect><rect x="240.0" y="7.8" width="2.2" height="23.2" fill="#FFB340"></rect><rect x="243.3" y="28.1" width="2.2" height="2.9" fill="#FFB340"></rect><rect x="246.7" y="20.7" width="2.2" height="10.3" fill="#FFB340"></rect><rect x="250.0" y="25.4" width="2.2" height="5.6" fill="#FFB340"></rect><rect x="253.3" y="25.1" width="2.2" height="5.9" fill="#FFB340"></rect><rect x="256.7" y="17.3" width="2.2" height="13.7" fill="#FFB340"></rect><rect x="260.0" y="27.7" width="2.2" height="3.3" fill="#FFB340"></rect><rect x="263.3" y="24.2" width="2.2" height="6.8" fill="#FFB340"></rect><rect x="266.7" y="26.5" width="2.2" height="4.5" fill="#FFB340"></rect><rect x="270.0" y="6.5" width="2.2" height="24.5" fill="#FFB340"></rect><rect x="273.3" y="17.0" width="2.2" height="14.0" fill="#FFB340"></rect><rect x="276.7" y="9.3" width="2.2" height="21.7" fill="#FFB340"></rect><rect x="280.0" y="6.5" width="2.2" height="24.5" fill="#FFB340"></rect><rect x="283.3" y="31.0" width="2.2" height="5.0" fill="#FF453A"></rect><rect x="286.7" y="23.0" width="2.2" height="8.0" fill="#FFB340"></rect><rect x="290.0" y="6.5" width="2.2" height="24.5" fill="#FFB340"></rect><rect x="293.3" y="10.9" width="2.2" height="20.1" fill="#FFB340"></rect><rect x="296.7" y="31.0" width="2.2" height="10.3" fill="#FF453A"></rect><line x1="0" y1="31" x2="300" y2="31" stroke="rgba(255,255,255,0.2)" stroke-width="1" vector-effect="non-scaling-stroke"></line></svg>
+                <div style="position: absolute; top: 0; bottom: 0; left: 70%; width: 1px; background: rgba(255,255,255,0.25)"></div>
+              </div>
+              <div style="width: 40px; height: 62px; display: flex; flex-direction: column; justify-content: space-between; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10px; color: rgba(255,255,255,0.6)"><span>+0.01%</span><span>0</span><span>−0.01%</span></div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 2px">
+            <div style="display: flex; justify-content: space-between; font-size: 11px"><span style="color: rgba(255,255,255,0.65)">Частка лонгів</span><span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: rgba(255,255,255,0.88)">54%</span></div>
+            <div style="display: flex; gap: 6px">
+              <div style="position: relative; flex-grow: 1; min-width: 0; height: 62px; border-bottom: 1px solid rgba(255,255,255,0.08)">
+                <sc-for list="{{ days }}" as="d" hint-placeholder-count="5"><div style="position: absolute; top: 0; bottom: 0; left: {{ d.left }}; width: 0; border-left: 1px dashed rgba(255,255,255,0.08)"></div></sc-for>
+                <svg viewBox="0 0 300 62" width="100%" height="62" preserveAspectRatio="none" aria-hidden="true" style="position: absolute; inset: 0"><polyline points="0.0,26.9 5.1,17.0 10.2,17.7 15.3,18.0 20.3,26.3 25.4,34.3 30.5,37.4 35.6,42.1 40.7,35.5 45.8,42.3 50.8,51.9 55.9,42.9 61.0,42.3 66.1,49.4 71.2,48.5 76.3,58.0 81.4,57.4 86.4,47.8 91.5,40.6 96.6,36.6 101.7,41.4 106.8,44.1 111.9,50.8 116.9,45.3 122.0,44.7 127.1,39.1 132.2,42.5 137.3,48.0 142.4,41.8 147.5,32.1 152.5,25.0 157.6,18.8 162.7,12.5 167.8,7.6 172.9,13.1 178.0,12.8 183.1,15.7 188.1,25.1 193.2,34.6 198.3,39.0 203.4,43.8 208.5,40.0 213.6,30.8 218.6,31.9 223.7,23.1 228.8,13.3 233.9,4.2 239.0,6.9 244.1,12.5 249.2,18.0 254.2,24.1 259.3,30.0 264.4,27.5 269.5,19.5 274.6,12.7 279.7,13.1 284.7,10.0 289.8,4.0 294.9,12.3 300.0,9.1" fill="none" stroke="#BF5AF2" stroke-width="1.4" vector-effect="non-scaling-stroke"></polyline></svg>
+                <div style="position: absolute; top: 0; bottom: 0; left: 70%; width: 1px; background: rgba(255,255,255,0.25)"></div>
+              </div>
+              <div style="width: 40px; height: 62px; display: flex; flex-direction: column; justify-content: space-between; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10px; color: rgba(255,255,255,0.6)"><span>58%</span><span>54%</span><span>50%</span></div>
+            </div>
+          </div>
+          <div style="position: relative; height: 12px; margin-right: 46px; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 10px; color: rgba(255,255,255,0.6)"><sc-for list="{{ days }}" as="d" hint-placeholder-count="5"><span style="position: absolute; left: {{ d.left }}; transform: translateX(-50%); white-space: nowrap">{{ d.t }}</span></sc-for></div>
+        </div>
+      </div>
+
+      <div style="padding: 12px 14px; border-radius: 10px; background: #2C2C2E; display: flex; flex-direction: column; gap: 8px">
+        <div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 12px; font-weight: 600">Плани входу</span><span style="font-size: 11px; color: rgba(255,255,255,0.55)">Ризик-менеджер · 10-11-2026 20:48:43</span></div>
+        <div style="font-size: 12px; line-height: 1.45; display: flex; flex-direction: column; gap: 8px">
+          <span><strong>Стан монети:</strong> ZEC після зливу — перп $1040 (24 год: −10.6%, діапазон 993–1199.9), OI впав з $539 млн до $458 млн за годину падіння, фандинг −0.0038% за 8 год, спот-тейкери продають (54.5% за добу), глибина в межах 1% лише $3.7 млн; рахунок $100, відкритих позицій немає, анонсів Binance щодо ZEC немає, тобто це поки розпродаж без ознак розвороту.</span>
+          <span><strong>Що зробить плани недійсними:</strong> просів нижче 993 з обсягом (зона 900–950 стає ціллю, а не підтримкою) або, навпаки, швидке повернення вище 1120–1140 зі зростанням OI і позитивним фандингом — це зміна режиму, і тоді переписуються всі чотири сценарії.</span>
+        </div>
+        <sc-for list="{{ scenarios }}" as="s" hint-placeholder-count="4">
+          <div style="display: flex; align-items: flex-start; gap: 10px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.05)">
+            <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+              <span style="font-size: 12px; font-weight: 600">{{ s.condition }}</span>
+              <span style="font-size: 12px">{{ s.action }}</span>
+              <span style="font-size: 11px; color: rgba(255,255,255,0.6)">{{ s.why }}</span>
+              <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; color: rgba(255,255,255,0.55)">{{ s.numbers }}</span>
+            </div>
+            <div style="flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 6px">
+              <span style="font-size: 11px; padding: 2px 7px; border-radius: 10px; background: {{ s.riskBg }}; color: {{ s.riskFg }}">{{ s.risk }}</span>
+              <button style="display: flex; align-items: center; gap: 4px; border: 1px solid {{ s.followBorder }}; border-radius: 10px; background: {{ s.followBg }}; color: {{ s.followFg }}; font: inherit; font-size: 11px; padding: 1px 7px; white-space: nowrap"><svg viewBox="0 0 24 24" width="10" height="10" fill="{{ s.bellFill }}" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>{{ s.follow }}</button>
+            </div>
+          </div>
+        </sc-for>
+        <div style="display: flex; gap: 8px; align-items: center">
+          <label style="flex-grow: 1; display: flex; padding: 5px 10px; border-radius: 7px; background: rgba(255,255,255,0.05)">
+            <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Побажання до планів</span>
+            <input type="text" placeholder="Сформувати плани для ZEC…" style="flex-grow: 1; border: 0; background: transparent; color: rgba(255,255,255,0.88); font: inherit; font-size: 12px; outline: none">
+          </label>
+          <button style="border: 0; border-radius: 7px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.88); font: inherit; font-size: 12px; font-weight: 600; padding: 5px 12px">Оновити плани</button>
+        </div>
+      </div>
+
+      <div style="padding: 12px 14px; border-radius: 10px; background: #2C2C2E; display: flex; flex-direction: column; gap: 8px">
+        <div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 12px; font-weight: 600">Трейдер</span><span style="font-size: 11px; color: rgba(255,255,255,0.55)">розмова про ZEC</span></div>
+        <div style="height: 640px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; gap: 12px">
+          <sc-for list="{{ talk }}" as="t" hint-placeholder-count="3">
+            <div style="display: flex; flex-direction: column; gap: 6px">
+              <span style="align-self: flex-end; max-width: 80%; padding: 6px 10px; border-radius: 12px; background: #0A84FF; color: #fff; font-size: 12px">{{ t.question }}</span>
+              <span style="font-size: 11px; font-weight: 600; color: #5EDB7F">Трейдер · {{ t.at }}</span>
+              <span style="padding: 8px 10px; border-radius: 12px; background: rgba(255,255,255,0.05); font-size: 12px; line-height: 1.5; white-space: pre-line">{{ t.answer }}</span>
+              <span style="font-size: 11px; color: rgba(255,255,255,0.55)">Інструменти: {{ t.calls }}</span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center">
+          <label style="flex-grow: 1; display: flex; padding: 5px 10px; border-radius: 7px; background: rgba(255,255,255,0.05)">
+            <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Питання трейдеру</span>
+            <input type="text" placeholder="Спитай Трейдера про ZEC…" style="flex-grow: 1; border: 0; background: transparent; color: rgba(255,255,255,0.88); font: inherit; font-size: 12px; outline: none">
+          </label>
+          <button style="border: 0; border-radius: 7px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.88); font: inherit; font-size: 12px; font-weight: 600; padding: 5px 12px">Запитати</button>
+          <button style="border: 0; background: transparent; padding: 0; font: inherit; font-size: 11px; color: rgba(255,255,255,0.6)">Очистити історію</button>
+        </div>
+      </div>
+
+      <div style="padding: 12px 14px; border-radius: 10px; background: #2C2C2E; display: flex; flex-direction: column; gap: 8px">
+        <div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 12px; font-weight: 600">Ордери</span><span style="font-size: 11px; color: rgba(255,255,255,0.55)">Testnet</span></div>
+        <sc-for list="{{ waiting }}" as="w" hint-placeholder-count="2">
+          <div style="display: flex; align-items: flex-start; gap: 10px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.05)">
+            <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+              <span style="font-size: 12px; font-weight: 600">{{ w.condition }}</span>
+              <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; color: rgba(255,255,255,0.55)">{{ w.numbers }}</span>
+              <span style="font-size: 11px; color: rgba(255,255,255,0.6)">{{ w.until }}</span>
+            </div>
+            <div style="flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 6px">
+              <span style="font-size: 11px; padding: 2px 7px; border-radius: 10px; background: rgba(100,181,255,0.14); color: #64B5FF">чекає</span>
+              <div style="display: flex; gap: 6px">
+                <button style="display: flex; align-items: center; gap: 4px; border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; background: transparent; color: rgba(255,255,255,0.6); font: inherit; font-size: 11px; padding: 1px 7px; white-space: nowrap"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg>Змінити</button>
+                <button style="display: flex; align-items: center; gap: 4px; border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; background: transparent; color: rgba(255,255,255,0.6); font: inherit; font-size: 11px; padding: 1px 7px; white-space: nowrap"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12"></path><path d="M18 6 6 18"></path></svg>Зняти</button>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+
+    <aside style="width: 440px; flex-shrink: 0; border-left: 1px solid rgba(255,255,255,0.08); background: #252527; display: flex; flex-direction: column">
+      <div style="flex-grow: 1; min-height: 0; overflow: hidden; padding: 18px; display: flex; flex-direction: column; gap: 10px">
+        <div style="display: flex; align-items: baseline; gap: 8px">
+          <h2 style="margin: 0; font-size: 14px; font-weight: 600">Новини</h2>
+          <span style="font-size: 11px; color: rgba(255,255,255,0.55)">знайдені ОСІНТером</span>
+          <div style="flex-grow: 1"></div>
+          <button style="border: 0; background: transparent; padding: 0; font: inherit; font-size: 11px; color: rgba(255,255,255,0.6)">Спочатку нові ↓</button>
+        </div>
+        <sc-for list="{{ news }}" as="n" hint-placeholder-count="8">
+          <div style="display: flex; gap: 10px; align-items: flex-start; padding: 8px 10px; border-radius: 9px; background: rgba(255,255,255,0.04)">
+            <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px">
+              <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; color: rgba(255,255,255,0.6)">{{ n.stamp }}</span>
+              <span style="font-size: 12px; line-height: 1.35">{{ n.text }}</span>
+              <a href="#" style="font-size: 11px; padding-top: 2px">{{ n.source }}</a>
+            </div>
+            <button aria-label="Прибрати новину" style="flex-shrink: 0; width: 18px; height: 18px; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,0.55); color: #252527; font: inherit; font-size: 10px; font-weight: 700; line-height: 18px">✕</button>
+          </div>
+        </sc-for>
+        <div style="height: 1px; background: rgba(255,255,255,0.08)"></div>
+        <h2 style="margin: 0; font-size: 14px; font-weight: 600">Календар</h2>
+        <sc-for list="{{ calendar }}" as="d" hint-placeholder-count="5">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 13px">
+            <span style="width: 130px; flex-shrink: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; color: rgba(255,255,255,0.6)">{{ d.date }}</span>
+            <span style="width: 56px; flex-shrink: 0; font-weight: 600">ZEC</span>
+            <span style="flex-grow: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ d.what }}</span>
+            <span style="flex-shrink: 0; font-size: 11px; padding: 2px 7px; border-radius: 10px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.66)">{{ d.left }}</span>
+          </div>
+        </sc-for>
+        <div style="height: 1px; background: rgba(255,255,255,0.08)"></div>
+        <div style="display: flex; align-items: baseline; gap: 8px"><h2 style="margin: 0; font-size: 14px; font-weight: 600">Сигнали й угоди бота</h2><span style="font-size: 11px; color: rgba(255,255,255,0.55)">по цій монеті</span></div>
+        <span style="font-size: 12px; color: rgba(255,255,255,0.55)">Бот ще не ловив анонсів Binance про цю монету і не відкривав по ній позицій.</span>
+      </div>
+
+      <div style="flex-shrink: 0; border-top: 1px solid rgba(255,255,255,0.08); padding: 18px; display: flex; flex-direction: column; gap: 10px">
+        <div style="display: flex; align-items: baseline; gap: 8px">
+          <h2 style="margin: 0; font-size: 14px; font-weight: 600">ОСІНТер</h2>
+          <span style="font-size: 11px; color: rgba(255,255,255,0.55)">розмова про ZEC</span>
+          <div style="flex-grow: 1"></div>
+          <button style="border: 0; background: transparent; padding: 0; font: inherit; font-size: 11px; color: rgba(255,255,255,0.6)">Очистити історію</button>
+        </div>
+        <div style="height: 300px; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px">
+          <span style="align-self: flex-end; max-width: 86%; padding: 6px 10px; border-radius: 12px; background: #0A84FF; color: #fff; font-size: 12px">Які події з відомою датою чекають на неї попереду?</span>
+          <span style="font-size: 11px; font-weight: 600; color: #64B5FF">ОСІНТер · 10-11-2026 19:04:10</span>
+          <span style="padding: 8px 10px; border-radius: 12px; background: rgba(255,255,255,0.05); font-size: 12px; line-height: 1.5">Серед подій із відомою датою попереду — голосування койнхолдерів і панелей спільноти щодо частки ZCG у Dev Fund (16–30 листопада, з можливим апгрейдом NU7.1 після нього), закриття прийому пропозицій Q4-раунду ретроактивних грантів 13 листопада і саме голосування за них 17–29 грудня, а також далекосяжні віхи: початок повторної емісії з резерву NSM у лютому 2031 та третій халвінг близько листопада 2028.
+
+Не вдалося знайти жодної затвердженої дати для NU8 (лише пропозиція орієнтуватися на кінець січня 2027), жодного графіка рішень SEC чи дати спліту Grayscale ZCSH, і в оголошеннях Binance немає нічого, що стосується ZEC.</span>
+          <span style="font-size: 11px; color: rgba(255,255,255,0.55)">Інструменти: binance_announcements, http_get, news_feed, project_links, report_news, web_search, x_posts</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px">
+          <sc-for list="{{ phrases }}" as="p" hint-placeholder-count="5"><button style="border: 1px solid rgba(255,255,255,0.14); background: transparent; color: rgba(255,255,255,0.7); font: inherit; font-size: 12px; padding: 4px 10px; border-radius: 12px">{{ p }}</button></sc-for>
+        </div>
+        <label style="display: flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 9px; background: #2C2C2E; border: 1px solid rgba(255,255,255,0.1)">
+          <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Що шукати</span>
+          <input type="text" placeholder="Що шукати про ZEC…" style="flex-grow: 1; min-width: 0; border: 0; background: transparent; color: rgba(255,255,255,0.88); font: inherit; font-size: 12px; outline: none">
+          <button style="border: 0; border-radius: 6px; background: #0A84FF; color: #fff; font: inherit; font-size: 12px; font-weight: 600; padding: 4px 10px">Знайти</button>
+        </label>
+      </div>
+    </aside>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":2670}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const risk = {
+      'високий': { riskFg: '#FF6961', riskBg: 'rgba(255,105,97,0.14)' },
+      'середній': { riskFg: '#FFB340', riskBg: 'rgba(255,179,64,0.14)' },
+      'мінімальний': { riskFg: '#5EDB7F', riskBg: 'rgba(94,219,127,0.14)' }
+    };
+    const watching = {
+      'Стежити': { followFg: 'rgba(255,255,255,0.6)', followBg: 'transparent', followBorder: 'rgba(255,255,255,0.14)', bellFill: 'none' },
+      'Стежу': { followFg: '#64B5FF', followBg: 'rgba(10,132,255,0.18)', followBorder: 'transparent', bellFill: 'currentColor' }
+    };
+    const scenario = (level, follow, condition, action, why, numbers) => Object.assign({ risk: level, follow, condition, action, why, numbers }, risk[level], watching[follow]);
+    return {
+      candles: [{"left": "0.813%", "wt": "27.08%", "wh": "8.69%", "bt": "32.41%", "bh": "1.77%", "c": "#30D158", "vh": "22.5%"}, {"left": "1.626%", "wt": "27.88%", "wh": "8.87%", "bt": "28.76%", "bh": "3.65%", "c": "#30D158", "vh": "24.2%"}, {"left": "2.439%", "wt": "18.66%", "wh": "10.48%", "bt": "19.38%", "bh": "9.37%", "c": "#30D158", "vh": "28.8%"}, {"left": "3.252%", "wt": "18.24%", "wh": "6.10%", "bt": "19.38%", "bh": "4.19%", "c": "#FF453A", "vh": "20.6%"}, {"left": "4.065%", "wt": "20.86%", "wh": "3.41%", "bt": "22.69%", "bh": "0.90%", "c": "#30D158", "vh": "9.6%"}, {"left": "4.878%", "wt": "21.96%", "wh": "7.72%", "bt": "22.69%", "bh": "5.87%", "c": "#FF453A", "vh": "18.7%"}, {"left": "5.691%", "wt": "27.25%", "wh": "3.42%", "bt": "28.56%", "bh": "0.80%", "c": "#FF453A", "vh": "12.6%"}, {"left": "6.504%", "wt": "29.08%", "wh": "4.61%", "bt": "29.36%", "bh": "2.66%", "c": "#FF453A", "vh": "16.4%"}, {"left": "7.317%", "wt": "29.89%", "wh": "4.61%", "bt": "32.02%", "bh": "1.52%", "c": "#FF453A", "vh": "16.4%"}, {"left": "8.130%", "wt": "31.41%", "wh": "4.08%", "bt": "32.00%", "bh": "1.53%", "c": "#30D158", "vh": "13.7%"}, {"left": "8.943%", "wt": "30.31%", "wh": "3.37%", "bt": "32.00%", "bh": "1.56%", "c": "#FF453A", "vh": "13.4%"}, {"left": "9.756%", "wt": "25.41%", "wh": "8.29%", "bt": "29.44%", "bh": "4.12%", "c": "#30D158", "vh": "23.9%"}, {"left": "10.569%", "wt": "26.70%", "wh": "3.07%", "bt": "27.91%", "bh": "1.52%", "c": "#30D158", "vh": "9.7%"}, {"left": "11.382%", "wt": "25.65%", "wh": "3.86%", "bt": "26.80%", "bh": "1.11%", "c": "#30D158", "vh": "11.9%"}, {"left": "12.195%", "wt": "17.56%", "wh": "10.24%", "bt": "23.00%", "bh": "3.81%", "c": "#30D158", "vh": "37.0%"}, {"left": "13.008%", "wt": "20.12%", "wh": "4.85%", "bt": "22.20%", "bh": "0.79%", "c": "#30D158", "vh": "24.0%"}, {"left": "13.821%", "wt": "7.40%", "wh": "17.47%", "bt": "13.02%", "bh": "9.19%", "c": "#30D158", "vh": "71.5%"}, {"left": "14.634%", "wt": "10.05%", "wh": "12.27%", "bt": "13.03%", "bh": "1.89%", "c": "#FF453A", "vh": "61.2%"}, {"left": "15.447%", "wt": "10.31%", "wh": "9.41%", "bt": "11.33%", "bh": "3.59%", "c": "#30D158", "vh": "34.1%"}, {"left": "16.260%", "wt": "9.45%", "wh": "6.90%", "bt": "11.33%", "bh": "1.65%", "c": "#FF453A", "vh": "23.6%"}, {"left": "17.073%", "wt": "11.46%", "wh": "5.77%", "bt": "12.98%", "bh": "4.13%", "c": "#FF453A", "vh": "15.3%"}, {"left": "17.886%", "wt": "15.48%", "wh": "2.26%", "bt": "15.52%", "bh": "1.59%", "c": "#30D158", "vh": "8.7%"}, {"left": "18.699%", "wt": "14.13%", "wh": "6.24%", "bt": "15.52%", "bh": "2.52%", "c": "#FF453A", "vh": "14.1%"}, {"left": "19.512%", "wt": "16.51%", "wh": "3.97%", "bt": "17.75%", "bh": "0.50%", "c": "#30D158", "vh": "7.9%"}, {"left": "20.325%", "wt": "15.85%", "wh": "5.64%", "bt": "17.75%", "bh": "3.01%", "c": "#FF453A", "vh": "7.8%"}, {"left": "21.138%", "wt": "19.61%", "wh": "1.93%", "bt": "20.54%", "bh": "0.50%", "c": "#30D158", "vh": "6.9%"}, {"left": "21.951%", "wt": "17.84%", "wh": "3.19%", "bt": "17.94%", "bh": "2.59%", "c": "#30D158", "vh": "7.0%"}, {"left": "22.764%", "wt": "14.40%", "wh": "3.64%", "bt": "15.00%", "bh": "2.94%", "c": "#30D158", "vh": "10.8%"}, {"left": "23.577%", "wt": "12.23%", "wh": "3.71%", "bt": "15.00%", "bh": "0.55%", "c": "#FF453A", "vh": "11.6%"}, {"left": "24.390%", "wt": "14.94%", "wh": "6.11%", "bt": "15.54%", "bh": "3.80%", "c": "#FF453A", "vh": "16.5%"}, {"left": "25.203%", "wt": "18.24%", "wh": "4.05%", "bt": "19.35%", "bh": "2.39%", "c": "#FF453A", "vh": "12.3%"}, {"left": "26.016%", "wt": "21.56%", "wh": "1.84%", "bt": "21.74%", "bh": "1.11%", "c": "#FF453A", "vh": "10.5%"}, {"left": "26.829%", "wt": "21.46%", "wh": "2.49%", "bt": "22.50%", "bh": "0.50%", "c": "#30D158", "vh": "11.3%"}, {"left": "27.642%", "wt": "20.09%", "wh": "2.68%", "bt": "20.54%", "bh": "1.97%", "c": "#30D158", "vh": "8.6%"}, {"left": "28.455%", "wt": "19.06%", "wh": "2.47%", "bt": "20.34%", "bh": "0.50%", "c": "#30D158", "vh": "9.8%"}, {"left": "29.268%", "wt": "19.11%", "wh": "2.97%", "bt": "20.34%", "bh": "1.06%", "c": "#FF453A", "vh": "8.4%"}, {"left": "30.081%", "wt": "20.76%", "wh": "7.38%", "bt": "21.39%", "bh": "3.64%", "c": "#FF453A", "vh": "25.3%"}, {"left": "30.894%", "wt": "24.91%", "wh": "2.92%", "bt": "25.04%", "bh": "1.97%", "c": "#FF453A", "vh": "10.1%"}, {"left": "31.707%", "wt": "25.51%", "wh": "3.80%", "bt": "27.00%", "bh": "0.96%", "c": "#FF453A", "vh": "14.4%"}, {"left": "32.520%", "wt": "27.40%", "wh": "3.64%", "bt": "27.97%", "bh": "2.28%", "c": "#FF453A", "vh": "17.9%"}, {"left": "33.333%", "wt": "28.74%", "wh": "3.92%", "bt": "30.24%", "bh": "0.50%", "c": "#FF453A", "vh": "16.0%"}, {"left": "34.146%", "wt": "30.55%", "wh": "4.52%", "bt": "30.69%", "bh": "2.75%", "c": "#FF453A", "vh": "27.1%"}, {"left": "34.959%", "wt": "31.60%", "wh": "1.93%", "bt": "32.70%", "bh": "0.74%", "c": "#30D158", "vh": "10.6%"}, {"left": "35.772%", "wt": "31.82%", "wh": "1.25%", "bt": "32.23%", "bh": "0.50%", "c": "#30D158", "vh": "6.2%"}, {"left": "36.585%", "wt": "30.18%", "wh": "2.43%", "bt": "31.00%", "bh": "1.23%", "c": "#30D158", "vh": "10.1%"}, {"left": "37.398%", "wt": "30.95%", "wh": "1.78%", "bt": "31.00%", "bh": "0.89%", "c": "#FF453A", "vh": "6.2%"}, {"left": "38.211%", "wt": "31.60%", "wh": "5.26%", "bt": "31.89%", "bh": "3.89%", "c": "#FF453A", "vh": "11.9%"}, {"left": "39.024%", "wt": "34.84%", "wh": "3.12%", "bt": "35.28%", "bh": "0.51%", "c": "#30D158", "vh": "10.3%"}, {"left": "39.837%", "wt": "33.00%", "wh": "2.97%", "bt": "33.51%", "bh": "1.77%", "c": "#30D158", "vh": "5.2%"}, {"left": "40.650%", "wt": "32.23%", "wh": "2.20%", "bt": "32.89%", "bh": "0.62%", "c": "#30D158", "vh": "6.5%"}, {"left": "41.463%", "wt": "32.81%", "wh": "2.38%", "bt": "32.88%", "bh": "0.97%", "c": "#FF453A", "vh": "6.1%"}, {"left": "42.276%", "wt": "33.31%", "wh": "2.35%", "bt": "33.85%", "bh": "1.40%", "c": "#FF453A", "vh": "4.4%"}, {"left": "43.089%", "wt": "35.13%", "wh": "2.58%", "bt": "35.18%", "bh": "0.50%", "c": "#30D158", "vh": "9.5%"}, {"left": "43.902%", "wt": "30.62%", "wh": "4.56%", "bt": "32.34%", "bh": "2.84%", "c": "#30D158", "vh": "17.0%"}, {"left": "44.715%", "wt": "31.85%", "wh": "2.87%", "bt": "32.34%", "bh": "1.76%", "c": "#FF453A", "vh": "6.8%"}, {"left": "45.528%", "wt": "31.39%", "wh": "2.96%", "bt": "32.68%", "bh": "1.42%", "c": "#30D158", "vh": "7.6%"}, {"left": "46.341%", "wt": "32.13%", "wh": "1.70%", "bt": "32.68%", "bh": "0.56%", "c": "#FF453A", "vh": "5.1%"}, {"left": "47.154%", "wt": "31.45%", "wh": "1.82%", "bt": "32.07%", "bh": "1.17%", "c": "#30D158", "vh": "6.6%"}, {"left": "47.967%", "wt": "31.68%", "wh": "1.68%", "bt": "32.07%", "bh": "0.50%", "c": "#30D158", "vh": "6.3%"}, {"left": "48.780%", "wt": "31.01%", "wh": "2.22%", "bt": "31.80%", "bh": "0.50%", "c": "#30D158", "vh": "7.9%"}, {"left": "49.593%", "wt": "31.10%", "wh": "2.69%", "bt": "31.80%", "bh": "0.50%", "c": "#FF453A", "vh": "7.9%"}, {"left": "50.407%", "wt": "26.40%", "wh": "5.90%", "bt": "29.07%", "bh": "3.21%", "c": "#30D158", "vh": "17.6%"}, {"left": "51.220%", "wt": "27.98%", "wh": "4.50%", "bt": "29.07%", "bh": "1.70%", "c": "#FF453A", "vh": "13.9%"}, {"left": "52.033%", "wt": "27.35%", "wh": "4.58%", "bt": "30.77%", "bh": "0.83%", "c": "#FF453A", "vh": "17.5%"}, {"left": "52.846%", "wt": "29.45%", "wh": "2.49%", "bt": "30.33%", "bh": "1.27%", "c": "#30D158", "vh": "7.8%"}, {"left": "53.659%", "wt": "29.77%", "wh": "1.36%", "bt": "30.33%", "bh": "0.53%", "c": "#FF453A", "vh": "4.4%"}, {"left": "54.472%", "wt": "29.81%", "wh": "5.97%", "bt": "30.86%", "bh": "3.80%", "c": "#FF453A", "vh": "19.9%"}, {"left": "55.285%", "wt": "34.43%", "wh": "3.03%", "bt": "34.66%", "bh": "0.50%", "c": "#FF453A", "vh": "16.4%"}, {"left": "56.098%", "wt": "31.10%", "wh": "4.29%", "bt": "31.82%", "bh": "3.07%", "c": "#30D158", "vh": "10.6%"}, {"left": "56.911%", "wt": "31.25%", "wh": "2.18%", "bt": "31.82%", "bh": "1.23%", "c": "#FF453A", "vh": "4.9%"}, {"left": "57.724%", "wt": "32.91%", "wh": "4.10%", "bt": "33.05%", "bh": "3.40%", "c": "#FF453A", "vh": "8.8%"}, {"left": "58.537%", "wt": "35.44%", "wh": "14.17%", "bt": "36.46%", "bh": "6.85%", "c": "#FF453A", "vh": "40.7%"}, {"left": "59.350%", "wt": "40.21%", "wh": "6.52%", "bt": "43.30%", "bh": "1.16%", "c": "#FF453A", "vh": "27.4%"}, {"left": "60.163%", "wt": "37.01%", "wh": "7.62%", "bt": "42.45%", "bh": "2.01%", "c": "#30D158", "vh": "27.4%"}, {"left": "60.976%", "wt": "37.90%", "wh": "5.59%", "bt": "38.24%", "bh": "4.21%", "c": "#30D158", "vh": "17.3%"}, {"left": "61.789%", "wt": "35.17%", "wh": "5.37%", "bt": "37.73%", "bh": "0.51%", "c": "#30D158", "vh": "15.1%"}, {"left": "62.602%", "wt": "36.00%", "wh": "2.43%", "bt": "37.73%", "bh": "0.50%", "c": "#FF453A", "vh": "9.1%"}, {"left": "63.415%", "wt": "36.98%", "wh": "3.20%", "bt": "38.19%", "bh": "0.50%", "c": "#FF453A", "vh": "9.2%"}, {"left": "64.228%", "wt": "36.67%", "wh": "2.98%", "bt": "38.45%", "bh": "0.50%", "c": "#FF453A", "vh": "7.3%"}, {"left": "65.041%", "wt": "38.10%", "wh": "3.29%", "bt": "38.61%", "bh": "2.39%", "c": "#FF453A", "vh": "10.3%"}, {"left": "65.854%", "wt": "40.14%", "wh": "2.91%", "bt": "41.00%", "bh": "1.80%", "c": "#FF453A", "vh": "17.2%"}, {"left": "66.667%", "wt": "42.61%", "wh": "4.92%", "bt": "42.81%", "bh": "3.62%", "c": "#FF453A", "vh": "22.0%"}, {"left": "67.480%", "wt": "38.68%", "wh": "9.25%", "bt": "39.34%", "bh": "7.08%", "c": "#30D158", "vh": "23.6%"}, {"left": "68.293%", "wt": "38.28%", "wh": "4.13%", "bt": "39.34%", "bh": "2.39%", "c": "#FF453A", "vh": "14.1%"}, {"left": "69.106%", "wt": "41.35%", "wh": "5.17%", "bt": "41.73%", "bh": "4.29%", "c": "#FF453A", "vh": "11.9%"}, {"left": "69.919%", "wt": "39.81%", "wh": "6.59%", "bt": "43.68%", "bh": "2.34%", "c": "#30D158", "vh": "16.3%"}, {"left": "70.732%", "wt": "39.26%", "wh": "4.66%", "bt": "40.45%", "bh": "3.23%", "c": "#30D158", "vh": "12.4%"}, {"left": "71.545%", "wt": "39.52%", "wh": "3.42%", "bt": "40.45%", "bh": "1.02%", "c": "#FF453A", "vh": "10.3%"}, {"left": "72.358%", "wt": "37.90%", "wh": "4.82%", "bt": "40.78%", "bh": "0.69%", "c": "#30D158", "vh": "15.8%"}, {"left": "73.171%", "wt": "38.24%", "wh": "4.89%", "bt": "39.91%", "bh": "0.86%", "c": "#30D158", "vh": "19.7%"}, {"left": "73.984%", "wt": "39.69%", "wh": "10.65%", "bt": "39.91%", "bh": "6.12%", "c": "#FF453A", "vh": "40.8%"}, {"left": "74.797%", "wt": "46.02%", "wh": "6.35%", "bt": "46.02%", "bh": "5.11%", "c": "#FF453A", "vh": "26.1%"}, {"left": "75.610%", "wt": "49.41%", "wh": "3.91%", "bt": "50.91%", "bh": "0.50%", "c": "#30D158", "vh": "19.5%"}, {"left": "76.423%", "wt": "47.00%", "wh": "5.44%", "bt": "50.38%", "bh": "0.53%", "c": "#30D158", "vh": "13.4%"}, {"left": "77.236%", "wt": "47.74%", "wh": "4.25%", "bt": "50.38%", "bh": "1.22%", "c": "#FF453A", "vh": "10.8%"}, {"left": "78.049%", "wt": "48.77%", "wh": "3.77%", "bt": "50.11%", "bh": "1.47%", "c": "#30D158", "vh": "7.9%"}, {"left": "78.862%", "wt": "48.06%", "wh": "3.34%", "bt": "50.11%", "bh": "0.50%", "c": "#FF453A", "vh": "6.7%"}, {"left": "79.675%", "wt": "50.08%", "wh": "4.42%", "bt": "50.18%", "bh": "2.17%", "c": "#FF453A", "vh": "14.1%"}, {"left": "80.488%", "wt": "50.04%", "wh": "2.96%", "bt": "51.00%", "bh": "1.34%", "c": "#30D158", "vh": "9.3%"}, {"left": "81.301%", "wt": "49.29%", "wh": "3.25%", "bt": "51.00%", "bh": "0.92%", "c": "#FF453A", "vh": "8.9%"}, {"left": "82.114%", "wt": "51.62%", "wh": "5.07%", "bt": "51.92%", "bh": "1.26%", "c": "#FF453A", "vh": "17.8%"}, {"left": "82.927%", "wt": "52.52%", "wh": "3.87%", "bt": "53.18%", "bh": "1.59%", "c": "#FF453A", "vh": "11.0%"}, {"left": "83.740%", "wt": "53.18%", "wh": "2.65%", "bt": "54.69%", "bh": "0.50%", "c": "#30D158", "vh": "8.6%"}, {"left": "84.553%", "wt": "51.87%", "wh": "3.13%", "bt": "53.98%", "bh": "0.71%", "c": "#30D158", "vh": "8.3%"}, {"left": "85.366%", "wt": "53.68%", "wh": "2.40%", "bt": "53.98%", "bh": "0.89%", "c": "#FF453A", "vh": "8.5%"}, {"left": "86.179%", "wt": "53.13%", "wh": "2.81%", "bt": "54.78%", "bh": "0.50%", "c": "#30D158", "vh": "9.8%"}, {"left": "86.992%", "wt": "54.06%", "wh": "4.14%", "bt": "54.78%", "bh": "0.84%", "c": "#FF453A", "vh": "20.2%"}, {"left": "87.805%", "wt": "55.40%", "wh": "2.16%", "bt": "55.62%", "bh": "0.69%", "c": "#FF453A", "vh": "12.5%"}, {"left": "88.618%", "wt": "55.10%", "wh": "3.76%", "bt": "56.31%", "bh": "0.50%", "c": "#FF453A", "vh": "12.7%"}, {"left": "89.431%", "wt": "54.08%", "wh": "3.09%", "bt": "54.90%", "bh": "1.46%", "c": "#30D158", "vh": "10.9%"}, {"left": "90.244%", "wt": "53.30%", "wh": "2.69%", "bt": "53.84%", "bh": "1.06%", "c": "#30D158", "vh": "10.3%"}, {"left": "91.057%", "wt": "49.18%", "wh": "9.71%", "bt": "52.23%", "bh": "1.61%", "c": "#30D158", "vh": "31.0%"}, {"left": "91.870%", "wt": "47.26%", "wh": "5.49%", "bt": "47.86%", "bh": "4.37%", "c": "#30D158", "vh": "33.4%"}, {"left": "92.683%", "wt": "45.02%", "wh": "25.35%", "bt": "47.86%", "bh": "18.47%", "c": "#FF453A", "vh": "92.0%"}, {"left": "93.496%", "wt": "64.85%", "wh": "21.55%", "bt": "66.33%", "bh": "16.64%", "c": "#FF453A", "vh": "100.0%"}, {"left": "94.309%", "wt": "75.93%", "wh": "9.49%", "bt": "77.50%", "bh": "5.46%", "c": "#30D158", "vh": "43.2%"}, {"left": "95.122%", "wt": "76.07%", "wh": "4.18%", "bt": "77.50%", "bh": "0.50%", "c": "#FF453A", "vh": "19.8%"}, {"left": "95.935%", "wt": "76.38%", "wh": "4.50%", "bt": "77.55%", "bh": "0.82%", "c": "#FF453A", "vh": "13.0%"}, {"left": "96.748%", "wt": "73.82%", "wh": "6.15%", "bt": "74.74%", "bh": "3.63%", "c": "#30D158", "vh": "13.5%"}, {"left": "97.561%", "wt": "71.45%", "wh": "3.69%", "bt": "72.40%", "bh": "2.34%", "c": "#30D158", "vh": "9.3%"}],
+      prices: [{"top": "85.00%", "t": "1000"}, {"top": "65.00%", "t": "1100"}, {"top": "45.00%", "t": "1200"}, {"top": "25.00%", "t": "1300"}],
+      ticks: [{"left": "6.5%", "t": "06:00", "line": "dashed", "rule": "rgba(255,255,255,0.06)", "color": "rgba(255,255,255,0.55)", "weight": 400}, {"left": "12.6%", "t": "12:00", "line": "dashed", "rule": "rgba(255,255,255,0.06)", "color": "rgba(255,255,255,0.55)", "weight": 400}, {"left": "20.33%", "t": "07.11", "line": "solid", "rule": "rgba(255,255,255,0.14)", "color": "rgba(255,255,255,0.88)", "weight": 600}, {"left": "30.1%", "t": "12:00", "line": "dashed", "rule": "rgba(255,255,255,0.06)", "color": "rgba(255,255,255,0.55)", "weight": 400}, {"left": "39.84%", "t": "08.11", "line": "solid", "rule": "rgba(255,255,255,0.14)", "color": "rgba(255,255,255,0.88)", "weight": 600}, {"left": "49.6%", "t": "12:00", "line": "dashed", "rule": "rgba(255,255,255,0.06)", "color": "rgba(255,255,255,0.55)", "weight": 400}, {"left": "59.35%", "t": "09.11", "line": "solid", "rule": "rgba(255,255,255,0.14)", "color": "rgba(255,255,255,0.88)", "weight": 600}, {"left": "69.1%", "t": "12:00", "line": "dashed", "rule": "rgba(255,255,255,0.06)", "color": "rgba(255,255,255,0.55)", "weight": 400}, {"left": "78.86%", "t": "10.11", "line": "solid", "rule": "rgba(255,255,255,0.14)", "color": "rgba(255,255,255,0.88)", "weight": 600}],
+      days: [{"left": "10%", "t": "15.10"}, {"left": "30%", "t": "21.10"}, {"left": "50%", "t": "27.10"}, {"left": "70%", "t": "02.11"}, {"left": "90%", "t": "08.11"}],
+      moves: [
+        { label: '15 хв', value: '+0.4%', note: 'рух ціни', color: '#5EDB7F' },
+        { label: '1 год', value: '+1.3%', note: 'рух ціни', color: '#5EDB7F' },
+        { label: '4 год', value: '−2.1%', note: 'рух ціни', color: '#FF6961' },
+        { label: 'Доба', value: '−9.1%', note: 'рух ціни', color: '#FF6961' },
+        { label: 'Обіг години', value: '×1.6', note: 'проти звичайної', color: 'rgba(255,255,255,0.88)' },
+        { label: 'Покупці', value: '52%', note: 'частка ринкових покупок', color: '#5EDB7F' }
+      ],
+      tiles: [
+        { label: 'Обіг за добу', value: '$197.16M', note: '×1.1 від середнього за 30 д', color: 'rgba(255,255,255,0.88)' },
+        { label: '90 д до BTC', value: '+104%', note: 'зміна відносно BTC', color: '#5EDB7F' },
+        { label: 'Фандинг / 8 год', value: '+0.001%', note: 'лонги платять шортам', color: '#FFB340' },
+        { label: 'Відкритий інтерес', value: '$462.92M', note: 'перп', color: 'rgba(255,255,255,0.88)' }
+      ],
+      scenarios: [
+        scenario('високий', 'Стежити', 'ZEC тримає лоу 993 і година закривається вище 1055 — перший відскок після зливу $179 млн лонгів', 'лонг від 1055–1065, стоп 985, тейк 1160', 'Спот-тейкери продають (54.5%), OI за годину зливу впав з $539 до $458 млн, тобто покупців не видно, а книга тонка ($3.7 млн у межах 1%) — стоп може проскочити значно нижче 985.', 'лонг від 1055.00 · 8% рахунку · стоп 985.00 · тейк 1160.00'),
+        scenario('високий', 'Стежити', 'Відскік у зону 1070–1100 (38–50% відновлення зливу) і відмова: година закривається назад нижче 1060', 'шорт від 1085, стоп 1140, тейк 1000', 'Вхід проти щойно перепроданого ринку з від\'ємним фандингом (−0.0038% за 8 год) — сквіз у тонкій книзі може винести стоп до 1140 швидко, хоча сам напрям збігається з трендом і відтоком із ZCSH.', 'шорт від 1070.00 · 6% рахунку · стоп 1140.00 · тейк 1000.00'),
+        scenario('середній', 'Стежу', 'Годинне закриття нижче 993 з обсягом вище середнього — пробій жовтневої підтримки підтверджено', 'шорт від 990, стоп 1045, тейк 900', 'Напрям за трендом і за потоком ETF, який не переламався навіть на новинах Grayscale, але це вже третій захід у зону лоу за добу — можливий різкий відкуп, тому розмір менший.', 'шорт до 995.00 · 5% рахунку · стоп 1045.00 · тейк 900.00'),
+        scenario('мінімальний', 'Стежу', 'Після 16 листопада: голосування койнхолдерів дало консенсус за NU7.1 або потік у ZCSH змінився з відтоку на приплив, і ціна закріплюється вище 1200', 'лонг від 1200 невеликим розміром, стоп 1120, тейк 1400', 'Вхід лише після підтвердженої події й повернення ціни над зоною зливу, тому ймовірність негайного стопу найнижча, а втрата обмежена 3% рахунку; головний ризик — дата події зсувається і план просто не спрацьовує.', 'лонг від 1180.00 з 16-11-2026 · 3% рахунку · стоп 1120.00 · тейк 1400.00')
+      ],
+      talk: [{"question": "наскільки важливо очікувати 16 листопада? чи це проміжкова дата?", "at": "10-11-2026 23:01:22", "answer": "Коротко: 16 листопада — це адміністративна, а не каталітична дата. Головна подія вже минула.\n\nЩо встановлено з даних:\n- 16 листопада о 00:00 UTC відкривається голосування койнхолдерів і панелей спільноти щодо частки ZCG у Dev Fund (ZIP 1016: 8% ZCG + 12% койнхолдерний фонд). Голосування закривається 30 листопада о 23:59 UTC — тобто 16-те лише старт двотижневого процесу, а не точка рішення (Zcash Community Forum, 5.11.2026).\n- Наслідки відкладені: результати публікують після закриття, оцінюють «грубий консенсус», і лише тоді інженери та майнери погоджують цільову дату апгрейду NU7.1. У нього входить лише схвалений ZIP, великих змін формату транзакцій там не буде.\n- Головна подія вже…", "calls": "server_get, binance_get, binance_announcements, news_feed, http_get"}, {"question": "а якщо ціна стане вище 1200?", "at": "10-11-2026 23:03:52", "answer": "1200 — не кругла цифра, а зламана опора: сьогоднішній максимум 1199,91 і є та межа, від якої відштовхнулись униз. Тому повернення вище неї — це не «+14%», а зміна структури.\n\nЩо встановлено з даних (станом на 21:03 UTC):\n- Перп 1054,1 (−9,87% за добу, діапазон 993,0–1199,9), спот останній денний закриток 1054,8, попередній — 1163,94. Тобто 1200 = максимум сьогоднішньої сесії й верх зони 1180–1210, яка тримала ціну 8–9 листопада і була пробита.\n- Вище — порожньо до 1249,7 (максимум 9.11), далі 1290 (максимум 8.11), потім щільна зона 1335–1364 (7.11) і 1388 (максимум 6.11). Кожен із цих рівнів — місце, де вже продавали.\n- Плечі вже вимиті: OI $519 млн → $452 млн за останні 8 годин (−13%),…", "calls": "server_get, binance_get"}, {"question": "а чому сьогодні так упало?", "at": "10-11-2026 23:05:32", "answer": "Падіння було не через ZEC, а через загальний risk-off — але ZEC упав учетверо сильніше за ринок, бо входив у нього перегрітим після NU7.\n\nПослідовність (з даних, UTC):\n- До 15:00 — ріст: о 15:07 заголовок фіксує +4,84% за 4 год до $1198 на Binance (перпі максимум 1199,91). Це і був локальний верх.\n- 15:00–16:00 — обвал: −8% за годину, а за дві години ~−16% (Pluang, 17:44). О 17:29 — мінімум $1003, «найнижчий з вересня», жовтнева підтримка $1030 пробита.\n- Зараз перп 1054,68 (−9,95%), денний діапазон 993,02–1199,91 — це ~20,8% при середньому денному 9,7%, тобто подвійний нормальний діапазон.\n\nПричини, за вагою:\n1. Макро. Гарячий жовтневий CPI США → BTC пішов під $73 000, і за годину…", "calls": "server_get, binance_get, news_feed, binance_announcements"}],
+      waiting: [
+        { condition: 'Годинне закриття нижче 993 з обсягом вище середнього — пробій жовтневої підтримки підтверджено', numbers: 'шорт до 995.00 · 5% рахунку · стоп 1045.00 · тейк 900.00', until: 'Стеження до 17-11-2026' },
+        { condition: 'Після 16 листопада: голосування койнхолдерів дало консенсус за NU7.1 або потік у ZCSH змінився з відтоку на приплив, і ціна закріплюється вище 1200', numbers: 'лонг від 1180.00 з 16-11-2026 · 3% рахунку · стоп 1120.00 · тейк 1400.00', until: 'Стеження до 23-11-2026 · перевірка не раніше 16-11-2026 02:00:00' }
+      ],
+      news: [{"stamp": "10-11-2026 19:29:33", "text": "ZEC опустився до $1 003 — найнижчий рівень із вересня, тобто жовтнева підтримка $1 030 пробита.", "source": "CryptoTicker.io"}, {"stamp": "10-11-2026 19:07:04", "text": "ZEC впав понад 12% за 24 години на тлі $11 млн ліквідацій на провідних біржах.", "source": "Pluang"}, {"stamp": "10-11-2026 18:45:00", "text": "ZEC за добу впав ~14% (перп), зокрема майже 8% за одну годину 15:00–16:00 UTC, на тлі загальноринкового розпродажу після гарячого жовтневого CPI в США: BTC пішов під $73 000, за годину ліквідовано ~$179 млн лонгів.", "source": "TradingView (news feed)"}, {"stamp": "10-11-2026 17:25:47", "text": "Grayscale зобов\u0027язався віддати 100% спонсорських комісій свого спотового Zcash-ETF (ZCSH) на ініціативи Zcash протягом першого року.", "source": "Crypto Briefing"}, {"stamp": "10-11-2026 15:00:00", "text": "Grayscale запустив продукт Zcash Invest і зобов\u0027язався внести $1 млн на розвиток та освітні ініціативи екосистеми Zcash.", "source": "GlobeNewswire"}, {"stamp": "10-11-2026 06:23:40", "text": "ZEC за ніч упав на 9,76%, і 22 кит-гаманці зазнали збитків; раніше кит продав захищений стек на $1,29 млн на Hyperliquid.", "source": "KuCoin (news feed)"}, {"stamp": "10-11-2026 00:29:27", "text": "Grayscale подав заявку на дроблення акцій свого спотового Zcash-ETF (тікер ZCSH) у пропорції 3 до 1 після зростання ZEC приблизно на 2 800%; дата проведення спліту не називається.", "source": "CoinMarketCap"}, {"stamp": "09-11-2026 22:29:00", "text": "Розробники (Valar Group) пропонують зібрати наступний апгрейд NU8 до кінця січня 2027 року — з новим пулом Tachyon, блоком до 8 МБ, постквантовими opcode-ами та ZIP 248; дата є лише пропозицією, рішення ухвалюють через опитування койнхолдерів.", "source": "Zcash Community Forum"}],
+      calendar: [
+        { date: '16-11-2026', what: 'Голосування койнхолдерів і панелей спільноти щодо частки ZCG у Dev Fund', left: 'за 6 д' },
+        { date: '20-11-2026 16:00', what: 'Розблокування 1.2% обігу — $2.1M', left: 'за 10 д' },
+        { date: '17-12-2026', what: 'Голосування у Q4-раунді ретроактивних грантів койнхолдерів', left: 'за 37 д' },
+        { date: '≈ 31-01-2027', what: 'Розробники пропонують зібрати апгрейд NU8 до кінця січня 2027 року', left: 'за 82 д' },
+        { date: '≈ 28-11-2028', what: 'Третє халвінг Zcash, винагорода за блок впаде до 0,78125 ZEC', left: 'за 749 д' },
+        { date: '≈ 01-02-2031', what: 'Повторна емісія коштів із резерву NSM', left: 'за 1544 д' }
+      ],
+      phrases: ['Останні новини', 'Біржі й делістинг', 'Розблокування', 'Проєкт і команда', 'Майбутні події']
+    };
+  }
+}
+</script>
+</body>
+</html>

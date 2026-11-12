@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Newsbot — головне вікно</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+a{color:#0A84FF}a:hover{color:#409CFF}
+</style>
+</helmet>
+<div style="width: 1340px; height: 760px; box-sizing: border-box; background: #1E1E1E; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif; color: rgba(255,255,255,0.88); border: 1px solid rgba(255,255,255,0.12)">
+
+  <div style="height: 52px; flex-shrink: 0; display: flex; align-items: center; gap: 16px; padding: 0 16px; background: #2A2A2C; border-bottom: 1px solid rgba(255,255,255,0.08)">
+    <div style="display: flex; gap: 8px" aria-hidden="true">
+      <span style="width: 12px; height: 12px; border-radius: 50%; background: #FF5F57"></span>
+      <span style="width: 12px; height: 12px; border-radius: 50%; background: #FEBC2E"></span>
+      <span style="width: 12px; height: 12px; border-radius: 50%; background: #28C840"></span>
+    </div>
+    <div style="font-size: 13px; font-weight: 600; margin-left: 8px">Newsbot</div>
+    <button style="display: flex; align-items: center; gap: 6px; border: 0; background: transparent; padding: 0; font: inherit; font-size: 12px; color: rgba(255,255,255,0.6)">
+      <span style="width: 8px; height: 8px; border-radius: 50%; background: #30D158"></span>
+      <span>Сервер онлайн · джерела 7 з 7</span>
+    </button>
+    <div style="flex-grow: 1"></div>
+    <button aria-pressed="true" style="display: flex; align-items: center; gap: 8px; border: 0; background: transparent; padding: 0; font: inherit; font-size: 12px; color: rgba(255,255,255,0.88)">
+      <span>Автотрейдинг</span>
+      <span aria-hidden="true" style="width: 26px; height: 15px; box-sizing: border-box; padding: 2px; border-radius: 8px; background: #30D158; display: flex; align-items: center; justify-content: flex-end"><span style="width: 11px; height: 11px; border-radius: 50%; background: #FFFFFF"></span></span>
+    </button>
+    <button style="border: 0; background: transparent; padding: 0; font: inherit; font-size: 12px; color: rgba(255,255,255,0.6)">Результати</button>
+  </div>
+
+  <div style="flex-grow: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); min-height: 0">
+
+    <section style="display: flex; flex-direction: column; min-width: 0; border-right: 1px solid rgba(255,255,255,0.08); background: #252527">
+      <div style="padding: 14px 16px 10px; display: flex; align-items: baseline; gap: 4px">
+        <button style="border: 0; background: transparent; padding: 0 10px 0 0; font: inherit; font-size: 15px; color: rgba(255,255,255,0.6)">Вішліст</button>
+        <button style="border: 0; background: transparent; padding: 0 10px 0 0; font: inherit; font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.88)">Монети</button>
+        <button style="border: 0; background: transparent; padding: 0 10px 0 0; font: inherit; font-size: 15px; color: rgba(255,255,255,0.6)">TradFi</button>
+        <span style="font-size: 12px; color: rgba(255,255,255,0.55)">{{ movers }}</span>
+      </div>
+      <div style="padding: 0 16px 8px">
+        <div style="display: flex; align-items: center; gap: 6px; padding: 5px 8px; border-radius: 8px; background: rgba(255,255,255,0.05); font-size: 13px; color: rgba(255,255,255,0.45)">
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" stroke-linecap="round"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5L14 14"/></svg>
+          <span>Знайти контракт</span>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 84px 70px 48px 48px 48px 44px minmax(36px, 1fr); column-gap: 4px; padding: 6px 12px; font-size: 11px; color: rgba(255,255,255,0.55); border-bottom: 1px solid rgba(255,255,255,0.08)">
+        <span>Монета</span><span style="text-align: right">Ціна</span><span style="text-align: right">15хв</span><span style="text-align: right">1год</span><span style="text-align: right">4год</span><span style="text-align: right">Обіг</span><span style="text-align: right">Куп.</span>
+      </div>
+      <div style="display: flex; flex-direction: column; overflow: hidden; flex-grow: 1">
+        <sc-for list="{{ pulse }}" as="c" hint-placeholder-count="11">
+          <div style="display: flex; flex-direction: column; gap: 3px; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); background: {{ c.rowBg }}">
+            <div style="display: grid; grid-template-columns: 84px 70px 48px 48px 48px 44px minmax(36px, 1fr); column-gap: 4px; align-items: center; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px">
+              <span style="display: flex; align-items: center; gap: 5px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif; font-size: 13px; font-weight: 600"><span style="width: 6px; height: 6px; border-radius: 50%; background: {{ c.dot }}"></span>{{ c.sym }}</span>
+              <span style="text-align: right">{{ c.price }}</span>
+              <span style="text-align: right; color: {{ c.qColor }}">{{ c.q }}</span>
+              <span style="text-align: right; color: {{ c.hColor }}">{{ c.h }}</span>
+              <span style="text-align: right; color: {{ c.fColor }}">{{ c.f }}</span>
+              <span style="text-align: right; color: {{ c.surgeColor }}">{{ c.surge }}</span>
+              <span style="text-align: right; color: {{ c.buyColor }}">{{ c.buy }}</span>
+            </div>
+            <sc-if value="{{ c.moving }}" hint-placeholder-val="{{ false }}">
+              <span style="padding-left: 11px; font-size: 11px; color: {{ c.reasonColor }}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ c.reason }}</span>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.08); padding: 12px 16px 14px; display: flex; flex-direction: column; gap: 8px">
+        <div style="display: flex; align-items: baseline; gap: 8px">
+          <h2 style="margin: 0; font-size: 15px; font-weight: 600">Календар</h2>
+          <span style="font-size: 12px; color: rgba(255,255,255,0.55)">розблокування, дати монет, експірації</span>
+        </div>
+        <sc-for list="{{ calendar }}" as="d" hint-placeholder-count="5">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 13px">
+            <span style="width: 130px; flex-shrink: 0; font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 12px; color: {{ d.dateColor }}">{{ d.date }}</span>
+            <span style="width: 56px; flex-shrink: 0; font-weight: 600">{{ d.sym }}</span>
+            <span style="flex-grow: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: {{ d.weight }}; color: {{ d.whatColor }}">{{ d.what }}</span>
+            <span style="flex-shrink: 0; font-size: 11px; padding: 2px 7px; border-radius: 10px; background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.66)">{{ d.left }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; min-width: 0; border-right: 1px solid rgba(255,255,255,0.08)">
+      <div style="padding: 14px 16px 10px; display: flex; align-items: baseline; gap: 8px">
+        <h2 style="margin: 0; font-size: 15px; font-weight: 600">Події</h2>
+        <div style="flex-grow: 1"></div>
+        <div style="display: flex; gap: 4px; font-size: 11px">
+          <button style="border: 0; font: inherit; font-size: 11px; padding: 3px 8px; border-radius: 10px; background: rgba(255,255,255,0.14); color: rgba(255,255,255,0.88)">Усі</button>
+          <button style="border: 0; font: inherit; font-size: 11px; padding: 3px 8px; border-radius: 10px; background: transparent; color: rgba(255,255,255,0.6)">Ордери</button>
+          <button style="border: 0; font: inherit; font-size: 11px; padding: 3px 8px; border-radius: 10px; background: transparent; color: rgba(255,255,255,0.6)">Вішліст</button>
+          <button style="border: 0; font: inherit; font-size: 11px; padding: 3px 8px; border-radius: 10px; background: transparent; color: rgba(255,255,255,0.6)">Тригери</button>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px; padding: 0 12px 12px; overflow: hidden">
+        <sc-for list="{{ events }}" as="e" hint-placeholder-count="4">
+          <div style="display: flex; gap: 10px; padding: 10px 12px; border-radius: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08)">
+            <span style="width: 8px; height: 8px; margin-top: 5px; border-radius: 50%; flex-shrink: 0; background: {{ e.dot }}"></span>
+            <div style="display: flex; flex-direction: column; gap: 3px; min-width: 0; flex-grow: 1">
+              <div style="display: flex; gap: 8px; align-items: baseline">
+                <span style="font-size: 11px; font-weight: 600; color: {{ e.kindColor }}">{{ e.kind }}</span>
+                <div style="flex-grow: 1"></div>
+                <span style="font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; color: rgba(255,255,255,0.55)">{{ e.time }}</span>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" stroke-linecap="round" style="flex-shrink: 0; align-self: center"><circle cx="8" cy="8" r="6.5"/><path d="M5.5 5.5l5 5M10.5 5.5l-5 5"/></svg>
+              </div>
+              <span style="font-size: 13px; line-height: 1.35">{{ e.title }}</span>
+              <span style="font-size: 12px; line-height: 1.35; color: rgba(255,255,255,0.6)">{{ e.sub }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; min-width: 0">
+      <div style="padding: 14px 16px 10px; display: flex; align-items: baseline; gap: 8px">
+        <h2 style="margin: 0; font-size: 15px; font-weight: 600">Аналітик</h2>
+        <span style="font-size: 12px; color: rgba(255,255,255,0.55)">ринок Binance і новини</span>
+        <div style="flex-grow: 1"></div>
+        <button style="border: 0; background: transparent; padding: 0; font: inherit; font-size: 11px; color: rgba(255,255,255,0.6)">Очистити історію</button>
+      </div>
+      <div style="flex-grow: 1; min-height: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 6px; padding: 0 16px 12px; overflow: hidden">
+        <div style="align-self: flex-end; max-width: 86%; padding: 6px 10px; border-radius: 12px; background: #0A84FF; color: #fff; font-size: 12px; line-height: 1.4">але ZEC по ніби припиняє рух, і каталізатор починає тягнути його в гору, а що з приводу токену ARB не підходить?</div>
+        <span style="font-size: 11px; font-weight: 600; color: #FFD60A">Binance-аналітик · 10-11-2026 20:10:14</span>
+        <div style="padding: 8px 10px; border-radius: 12px; background: rgba(255,255,255,0.05); font-size: 12px; line-height: 1.5; display: flex; flex-direction: column; gap: 8px">
+          <span><strong>Ні — зараз немає монети з рухом і названою причиною, яку можна перевірити. ZEC: відскок від лоу справді є, але він без джерела і слабший за злив; твердження, що «каталізатор тягне вгору», числа не підтверджують. ARB не підходить: рух униз є, але це чиста бета без власної новини, і попереду навіс. Єдина справжня дивність сьогодні — INIT.</strong></span>
+          <span><strong>Хронологія проти тези.</strong> Grayscale Zcash Invest і $1 млн в екосистему — 13:00 UTC. Злив почався о 15:13 UTC і продовжився о 16:13 (лоу 993,02). Каталізатор вийшов за дві години до падіння, і ціна на нього вгору не пішла.</span>
+          <span><strong>Обсяг відскоку вдвічі менший за обсяг зливу:</strong> 207,2 тис. ZEC ($212 млн) у годині відскоку проти 471,9 тис. ($490 млн) у годині зливу — 44%.</span>
+        </div>
+        <span style="font-size: 11px; color: rgba(255,255,255,0.55)">Інструменти: server_get, news_feed, binance_announcements, market_screen, binance_get, http_get, web_search, x_posts</span>
+      </div>
+      <div style="padding: 12px 16px 16px; border-top: 1px solid rgba(255,255,255,0.08); display: flex; flex-direction: column; gap: 8px">
+        <div style="display: flex; gap: 6px">
+          <button style="border: 1px solid rgba(255,255,255,0.14); background: transparent; color: rgba(255,255,255,0.7); font: inherit; font-size: 12px; padding: 4px 10px; border-radius: 12px">Пошук кандидатів</button>
+          <button style="border: 1px solid rgba(255,255,255,0.14); background: transparent; color: rgba(255,255,255,0.7); font: inherit; font-size: 12px; padding: 4px 10px; border-radius: 12px">Дивності</button>
+        </div>
+        <label style="display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 10px; background: #2C2C2E; border: 1px solid rgba(255,255,255,0.1)">
+          <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Питання аналітику</span>
+          <input type="text" placeholder="Запитай: Binance-аналітик…" style="flex-grow: 1; border: 0; background: transparent; color: rgba(255,255,255,0.88); font: inherit; font-size: 13px; outline: none">
+          <button aria-label="Надіслати" style="width: 22px; height: 22px; padding: 0; border: 0; border-radius: 50%; background: #0A84FF; color: #fff; display: flex; align-items: center; justify-content: center">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="m6 11 6-6 6 6"></path></svg>
+          </button>
+        </label>
+      </div>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1340,"height":760}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const red = '#FF6961', green = '#5EDB7F';
+    const tint = (v) => v.startsWith('−') ? red : green;
+    return {
+      movers: 'ожили: 2 · тенденція: 3',
+      pulse: [{"sym": "BARD", "price": "0.1646", "q": "+2%", "h": "+25%", "f": "+31%", "surge": "×35.0", "buy": "71%", "moving": true, "tag": false, "reason": "зліт із тиші 2 год тому: +25% за годину, ×35 звичайної"}, {"sym": "ERA", "price": "0.0831", "q": "−1%", "h": "−7%", "f": "−3%", "surge": "×3.1", "buy": "47%", "moving": true, "reason": "ожила 5 хв тому: інтерес −3.4%, лонги +2.6 п.п. · X · @Calderaxyz: Massive week for Manta"}, {"sym": "ARIA", "price": "0.23869", "q": "−2%", "h": "+4%", "f": "+7%", "surge": "×4.3", "buy": "54%", "moving": true, "reason": "ожила 20 хв тому: інтерес +4.1%, лонги −2.2 п.п."}, {"sym": "JCT", "price": "0.006225", "q": "−2%", "h": "−15%", "f": "+3%", "surge": "×1.8", "buy": "50%", "moving": false, "reason": ""}, {"sym": "WIF", "price": "0.15020", "q": "+1%", "h": "−1%", "f": "−1%", "surge": "×1.2", "buy": "42%", "moving": false, "tag": true, "reason": ""}, {"sym": "AKE", "price": "0.002585", "q": "+1%", "h": "−3%", "f": "−3%", "surge": "×0.7", "buy": "46%", "moving": false, "reason": ""}, {"sym": "ZEC", "price": "998.53", "q": "−0%", "h": "+3%", "f": "−2%", "surge": "×1.6", "buy": "52%", "moving": false, "reason": ""}, {"sym": "SNXX", "price": "3.8570", "q": "+0%", "h": "+2%", "f": "+3%", "surge": "×1.1", "buy": "50%", "moving": false, "reason": ""}, {"sym": "AVAX", "price": "8.6210", "q": "+0%", "h": "+2%", "f": "+2%", "surge": "×1.4", "buy": "59%", "moving": false, "reason": ""}, {"sym": "SOXS", "price": "48.5800", "q": "−1%", "h": "−2%", "f": "−2%", "surge": "×0.9", "buy": "45%", "moving": false, "reason": ""}, {"sym": "SOXL", "price": "63.0400", "q": "+1%", "h": "+2%", "f": "+2%", "surge": "×0.9", "buy": "51%", "moving": false, "reason": ""}, {"sym": "WLD", "price": "0.3137", "q": "+0%", "h": "+2%", "f": "+0%", "surge": "×0.9", "buy": "58%", "moving": false, "reason": ""}].map((c) => Object.assign(c, {
+        dot: c.tag ? '#FF9F0A' : ['SNXX', 'SOXS', 'SOXL'].includes(c.sym) ? 'transparent' : 'rgba(255,255,255,0.12)',
+        rowBg: c.moving ? 'rgba(255,159,10,0.07)' : 'transparent',
+        qColor: tint(c.q), hColor: tint(c.h), fColor: tint(c.f),
+        surgeColor: parseFloat(c.surge.slice(1)) >= 2 ? '#FFB340' : 'rgba(255,255,255,0.88)',
+        buyColor: parseFloat(c.buy) >= 50 ? green : red,
+        reasonColor: c.reason.includes(' · ') ? 'rgba(255,255,255,0.6)' : 'rgba(255,255,255,0.55)'
+      })),
+      calendar: [
+        { date: '13-11-2026', sym: 'XMR', what: 'MEXC 13 листопада зупиняє торгівлю XMR', left: 'за 1 д' },
+        { date: '13-11-2026 14:00', sym: 'GRAM', what: 'Coinbase відкриває безстрокові ф\'ючерси на GRAM', left: 'за 1 д' },
+        { date: '13-11-2026 22:43', sym: 'AGT', what: 'Розблокування 1.79% обігу — $4.6M', left: 'за 1 д' },
+        { date: '14-11-2026 02:00', sym: 'PIEVERSE', what: 'Розблокування 28.64% обігу — $145M', left: 'за 2 д', share: 0.2864 },
+        { date: '17-11-2026 15:30', sym: 'ERA', what: 'Розблокування 15.79% обігу — $1.76M', left: 'за 5 д', share: 0.1579 },
+        { date: '27-11-2026 10:00', sym: 'Deribit', what: 'Місячна експірація опціонів BTC, ETH', left: 'за 15 д' }
+      ].map((d) => Object.assign(d, {
+        dateColor: parseInt(d.left.slice(3)) <= 3 ? red : 'rgba(255,255,255,0.6)',
+        weight: (d.share ?? 0) >= 0.05 ? 600 : 400,
+        whatColor: (d.share ?? 0) >= 0.05 ? '#FFB340' : 'rgba(255,255,255,0.88)'
+      })),
+      events: [
+        { kind: 'ОРДЕР · ПЛАН · СТЕЖУ', kindColor: '#64B5FF', dot: '#0A84FF', time: '20:50:12', title: 'ZEC: Годинне закриття нижче 993 з обсягом вище середнього — пробій жовтневої підтримки підтверджено', sub: 'шорт від 990, стоп 1045, тейк 900' },
+        { kind: 'ОРДЕР · ПЛАН · СТЕЖУ', kindColor: '#64B5FF', dot: '#0A84FF', time: '20:49:21', title: 'ZEC: Після 16 листопада: голосування койнхолдерів дало консенсус за NU7.1 або потік у ZCSH змінився з відтоку на приплив, і ціна закріплюється вище 1200', sub: 'лонг від 1200 невеликим розміром, стоп 1120, тейк 1400' },
+        { kind: 'ОРДЕР · ВИХІД · ВРУЧНУ', kindColor: '#64B5FF', dot: '#0A84FF', time: '20:30:14', title: 'Закрито лонг BTC: −0.20%', sub: '' },
+        { kind: 'ОРДЕР · ВХІД', kindColor: '#64B5FF', dot: '#0A84FF', time: '20:29:57', title: 'Лонг BTC 5% після «план на стеженні»', sub: '' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
